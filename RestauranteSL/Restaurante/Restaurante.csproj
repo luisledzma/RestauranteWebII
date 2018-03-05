@@ -71,6 +71,7 @@
     <Content Include="Assets\css\estilos.css" />
     <Content Include="Assets\img\loading.svg" />
     <Content Include="Assets\img\logo.png" />
+    <Content Include="Assets\video\Slicing.mp4" />
     <Content Include="Content\Animate\animate.css" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />

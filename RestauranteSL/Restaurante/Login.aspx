@@ -9,8 +9,30 @@
     <link href="Content/Bootstrap/bootstrap.css" rel="stylesheet" />
     <link href="Content/Animate/animate.css" rel="stylesheet" />
     <link href="Assets/css/estilos.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Condensed" rel="stylesheet" />
+    
 
     <style>
+        #background {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+            background: url(polina.jpg) no-repeat;
+            background-size: cover;
+        }
+
+        .container h1 {
+            color: white;
+        }
+
+
         .pen body {
             padding-top: 50px;
         }
@@ -50,6 +72,22 @@
             min-height: 100vh;
             border: 0;
         }
+
+        .btnModal {
+            border-radius: 30px 30px;
+            color:#FF3346;
+            border-color:#FF3346;
+        }
+
+        #btnModal > a:hover {
+            background-color:#FF3346;
+            color : snow;
+            border-color:#FF3346;
+        }
+
+        #btnModal > a::selection {
+            background-color:#FF3346;
+        }
     </style>
 
 </head>
@@ -57,11 +95,24 @@
     <form id="form1" runat="server">
         <asp:ScriptManager ID="tsmIngresar" EnablePageMethods="true" runat="server"></asp:ScriptManager>
 
-        <div class="container" style="padding-top: 50px;">
+        <video autoplay="autoplay" loop="loop" muted="muted" poster="screenshot.jpg" id="background">
+            <source src="Assets/video/Slicing.mp4" type="video/mp4" />
+        </video>
+
+        <div class="container" style="padding-top: 150px;">
             <div class="row">
-                <div class="col-md-4 col-xs-12 offset-md-4 text-center">
-                    <a href="#" data-toggle="modal" data-target="#sidebar-right" class="login-desk">Ingresar <span class="glyphicon glyphicon-log-in" style="margin-left: 5px;"></span>
-                    </a>
+                <div class="col-md-6 col-xs-12 offset-md-3 text-center">
+                    <div class="col-md-12 mx-auto "   style="font-family: 'Roboto Condensed',sans-serif; font-style: italic ; ">
+                        <h1 class="text-uppercase" >
+                            <strong>Sistema de control del Restaurante</strong>
+                        </h1>
+                    </div>
+                    <div class="col-lg-12" style="padding-top: 157px;">
+                        <div id="btnModal" class="col-lg-4 offset-lg-4 font-weight-bold">
+                            <a href="#"  data-toggle="modal" data-target="#sidebar-right" class="login-desk btn btn-lg btnModal">Ingresar <span class="glyphicon glyphicon-log-in" style="margin-left: 5px;"></span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -109,7 +160,7 @@
                                                         </div>
                                                         <asp:TextBox CssClass="txtLoginEnter form-control" name="txtContrasena" placeholder="Contraseña" ID="txtContrasena" autocomplete="off" runat="server" TextMode="Password"></asp:TextBox>
                                                     </div>
-                                                    
+
                                                 </div>
                                             </div>
                                         </div>
@@ -153,7 +204,7 @@
             </div>
 
         </div>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="Scripts/js/jquery-3.0.0.js"></script>
         <script src="Scripts/js/bootstrap.js"></script>
 
@@ -161,14 +212,30 @@
         <script src="https://use.fontawesome.com/releases/v5.0.6/js/brands.js"></script>
         <script src="https://use.fontawesome.com/releases/v5.0.6/js/solid.js"></script>
         <script src="https://use.fontawesome.com/releases/v5.0.6/js/fontawesome.js"></script>
+        
         <script>
             $(document).ready(function () {
                 $(".modal a").not(".dropdown-toggle").on("click", function () {
                     $(".modal").modal("hide");
                 });
             });
+
+           
         </script>
     </form>
+
+    <footer style="padding-top:200px;">
+        <div class="container-fluid py-3 bg-dark text-white mt-4 ">
+            <div class="row d-block mx-auto">
+                <span class="text-warning">Copyrigth&copy;</span><asp:Label ID="Label1" runat="server" Text="All rights Reserved "></asp:Label>
+            </div>
+            <div class="row d-block mx-auto">
+                <asp:Label ID="Label2" runat="server" Text="Created by: Anthony, Joszef and Luis "></asp:Label>
+            </div>
+
+        </div>
+    </footer>
+
 
 </body>
 </html>
