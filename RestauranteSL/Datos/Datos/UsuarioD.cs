@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logica
+namespace Datos.Datos
 {
-    public class Class1
+    public class UsuarioD
     {
     }
 }

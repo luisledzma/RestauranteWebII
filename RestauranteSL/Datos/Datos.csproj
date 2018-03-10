@@ -43,11 +43,10 @@
   <ItemGroup>
     <Compile Include="Database.cs" />
     <Compile Include="DatabaseFactory.cs" />
+    <Compile Include="Datos\UsuarioD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Datos\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{22302189-09be-4190-9047-4e953a8d13f5}</Project>
