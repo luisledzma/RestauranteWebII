@@ -51,3 +51,7 @@ RestauranteSL/Logica/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 *.cache
 RestauranteSL/Datos/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 *.cache
+*.cache
+RestauranteSL/Logica/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+RestauranteSL/Restaurante/bin/Datos.pdb
+*.cache

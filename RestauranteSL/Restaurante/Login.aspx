@@ -10,7 +10,8 @@
     <link href="Content/Animate/animate.css" rel="stylesheet" />
     <link href="Assets/css/estilos.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Condensed" rel="stylesheet" />
-    
+    <link href="sticky-footer.css" rel="stylesheet" />
+
 
     <style>
         #background {
@@ -28,8 +29,104 @@
             background-size: cover;
         }
 
-        .container h1 {
-            color: white;
+
+        @media (max-width:576px) {
+            .alert {
+                max-width: 295px;
+            }
+
+           .btnModal {
+                padding: 6px 3px !important;
+                font-size : 15px;
+            }
+            #btnModal{
+                padding-top: 50px;
+            }
+            h3{
+                font-size:15px;
+            }
+        }
+
+        @media (min-width: 577px) and (max-width : 767px) {
+            .alert {
+                width: 295px;
+            }
+            .btnModal {
+                padding: 8px 4px !important;
+                font-size : 17px;
+            }
+            #btnModal{
+                padding-top: 25px;
+            }
+            h3{
+                font-size:20px;
+            }
+            .word{
+                font-size:25px;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width : 991px) {
+            .alert {
+                width: 295px;
+            }
+            .btnModal {
+                padding: 10px 5px !important;
+                font-size : 20px;
+            }
+            #btnModal{
+                padding-top: 50px;
+            }
+            h3{
+                font-size:25px;
+            }
+            .word{
+                font-size:30px;
+            }
+        }
+
+        @media (min-width: 992px) and (max-width : 1199px) {
+            .alert {
+                width: 295px;
+            }
+            .btnModal {
+                padding: 10px 5px !important;
+                font-size : 20px;
+            }
+            #btnModal{
+                padding-top: 100px;
+            }
+            h3{
+                font-size:30px;
+            }
+            .word{
+                font-size:40px;
+            }
+        }
+        
+        @media (min-width: 1200px)  {
+            .alert {
+                width: 295px;
+            }
+            .btnModal {
+                padding: 10px 5px !important;
+                font-size : 20px;
+            }
+            #btnModal{
+                padding-top: 200px;
+            }
+            h3{
+                font-size:40px;
+            }
+            .word{
+                font-size:50px;
+            }
+        }
+        
+        
+
+        .container h3 {
+            color: snow;
         }
 
 
@@ -39,7 +136,7 @@
 
 
 
-        /* MODAL FADE LEFT RIGHT BOTTOM */
+
         .modal.fade:not(.in).left .modal-dialog {
             -webkit-transform: translate3d(-25%, 0, 0);
             transform: translate3d(0%, 0, 0);
@@ -75,19 +172,22 @@
 
         .btnModal {
             border-radius: 30px 30px;
-            color:#FF3346;
-            border-color:#FF3346;
+            color: #FF3346;
+            border-color: #FF3346;
         }
 
         #btnModal > a:hover {
-            background-color:#FF3346;
-            color : snow;
-            border-color:#FF3346;
+            background-color: #FF3346;
+            color: snow;
+            border-color: #FF3346;
         }
 
         #btnModal > a::selection {
-            background-color:#FF3346;
+            background-color: #FF3346;
         }
+
+        
+        
     </style>
 
 </head>
@@ -99,17 +199,16 @@
             <source src="Assets/video/Slicing.mp4" type="video/mp4" />
         </video>
 
-        <div class="container" style="padding-top: 150px;">
+        <div class="container" style="padding-top: 50px;">
             <div class="row">
-                <div class="col-md-6 col-xs-12 offset-md-3 text-center">
-                    <div class="col-md-12 mx-auto "   style="font-family: 'Roboto Condensed',sans-serif; font-style: italic ; ">
-                        <h1 class="text-uppercase" >
-                            <strong>Sistema de control del Restaurante</strong>
-                        </h1>
+                <div class="col-md-6 col-xs-12 col-sm-12 offset-md-3 text-center">
+                    <div class="col-md-12 col-xs-12 col-sm-12 mx-auto fadeIn wow" data-wow-duration="1000ms" data-wow-delay="400ms" style="font-family: 'Roboto Condensed',sans-serif; ">
+                        <h3><b style="color:#FF3346;">Control</b>  del <i class="word" >Restaurante</i></h3>
+                        <h5></h5>
                     </div>
-                    <div class="col-lg-12" style="padding-top: 157px;">
-                        <div id="btnModal" class="col-lg-4 offset-lg-4 font-weight-bold">
-                            <a href="#"  data-toggle="modal" data-target="#sidebar-right" class="login-desk btn btn-lg btnModal">Ingresar <span class="glyphicon glyphicon-log-in" style="margin-left: 5px;"></span>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                        <div id="btnModal" class="col-lg-4 offset-lg-4 col-xs-6 offset-xs-3 font-weight-bold">
+                            <a href="#" data-toggle="modal" data-target="#sidebar-right" class="login-desk btn btnModal">Iniciar Sesión<span class="fas fa-sign-in-alt" style="margin-left: 5px;"></span>
                             </a>
                         </div>
                     </div>
@@ -134,9 +233,9 @@
                             <div class="col-lg-12 col-md-12 col-xs-12 form-bg frmlogin" id="divLogin" runat="server" style="border-radius: 20px;">
                                 <div class="box">
                                     <div class="title">
-                                        <img class="offset-2" src="Assets/img/logo.png" />
+                                        <img class="mx-auto d-block img-fluid" src="Assets/img/logo.png" />
                                     </div>
-                                    <div class="box-content ">
+                                    <div class="box-content">
                                         <div class="row">
                                             <div class="col-md-12 offset-md-0">
                                                 <div class="col-sm-12 col-xs-12">
@@ -144,7 +243,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                                                         </div>
-                                                        <asp:TextBox CssClass="form-control" name="txtUsuario" placeholder="Usuario" ID="txtUsuario" autocomplete="off" runat="server" Text=""></asp:TextBox>
+                                                        <asp:TextBox CssClass="form-control" name="txtUsuario" required="required" placeholder="Usuario" ID="txtUsuario" autocomplete="off" runat="server" Text=""></asp:TextBox>
                                                     </div>
 
                                                 </div>
@@ -158,12 +257,13 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                                                         </div>
-                                                        <asp:TextBox CssClass="txtLoginEnter form-control" name="txtContrasena" placeholder="Contraseña" ID="txtContrasena" autocomplete="off" runat="server" TextMode="Password"></asp:TextBox>
+                                                        <asp:TextBox CssClass="txtLoginEnter form-control" required="required" name="txtContrasena" placeholder="Contraseña" ID="txtContrasena" autocomplete="off" runat="server" TextMode="Password"></asp:TextBox>
                                                     </div>
 
                                                 </div>
                                             </div>
                                         </div>
+
 
                                         <div class="row">
                                             <div class="col-md-12 col-md-offset-0">
@@ -175,19 +275,31 @@
                                                                 <ProgressTemplate>
                                                                     <div class="loading-panel">
                                                                         <div class="loading-container">
-                                                                            <img src="Assets/img/loading.svg" />
+                                                                            <img class="mx-auto d-block" src="Assets/img/loading.svg" />
                                                                         </div>
                                                                     </div>
+
                                                                 </ProgressTemplate>
                                                             </asp:UpdateProgress>
 
-                                                            <asp:Button ID="btnLogin" runat="server" Text="Ingresar" CssClass="btn btn-block btn-dark" Visible="true" />
+
+
+
+                                                            <div class="row">
+                                                                <div id="errorMsj" style="display: none;" runat="server" class="alert alert-danger">
+                                                                    <asp:Label ID="lblAlert" runat="server" Text=""></asp:Label>
+                                                                </div>
+                                                            </div>
+
+                                                            <asp:Button ID="btnLogin" runat="server" Text="Ingresar" CssClass="btn btn-block btn-dark" Visible="true" OnClick="btnLogin_Click" />
+
                                                         </ContentTemplate>
                                                     </asp:UpdatePanel>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="box-footer">
 
                                         <div class="pull-right">
@@ -203,16 +315,39 @@
                 </div>
             </div>
 
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalTitle">Restaurante</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <asp:Label ID="lblMensaje" runat="server" Text="Label"></asp:Label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="Scripts/js/jquery-3.0.0.js"></script>
         <script src="Scripts/js/bootstrap.js"></script>
+        <script src="https://github.com/graingert/WOW/blob/master/src/WOW.js"></script>
 
         <!--use just the brands and solid styles-->
         <script src="https://use.fontawesome.com/releases/v5.0.6/js/brands.js"></script>
         <script src="https://use.fontawesome.com/releases/v5.0.6/js/solid.js"></script>
         <script src="https://use.fontawesome.com/releases/v5.0.6/js/fontawesome.js"></script>
-        
+
         <script>
             $(document).ready(function () {
                 $(".modal a").not(".dropdown-toggle").on("click", function () {
@@ -220,11 +355,11 @@
                 });
             });
 
-           
+            
         </script>
     </form>
 
-    <footer style="padding-top:200px;">
+    <footer class="fixed-bottom">
         <div class="container-fluid py-3 bg-dark text-white mt-4 ">
             <div class="row d-block mx-auto">
                 <span class="text-warning">Copyrigth&copy;</span><asp:Label ID="Label1" runat="server" Text="All rights Reserved "></asp:Label>

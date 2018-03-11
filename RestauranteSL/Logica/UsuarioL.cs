@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Datos.Datos;
+using Entidades;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,5 +11,32 @@ namespace Logica
 {
     public class UsuarioL
     {
+        private UsuarioD datos = new UsuarioD(); 
+        public UsuarioE SeleccionarUsuario(UsuarioE usuario)
+        {
+            try
+            {
+                DataSet ds = datos.SeleccionarTodos(usuario);
+                UsuarioE user = new UsuarioE();
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    user.IDENTIFICACION = fila["IDENTIFICACION"].ToString();
+                    user.NOMBRE = fila["NOMBRE"].ToString();
+                    user.APELLIDOS = fila["APELLIDOS"].ToString();
+                    user.TELEFONO = fila["TELEFONO"].ToString();
+                    user.CORREO_ELECTRONICO = fila["CORREO_ELECTRONICO"].ToString();
+                    user.CONTRASENNA = fila["CONTRASENNA"].ToString();
+                    user.FK_PERFIL = Convert.ToInt32(fila["FK_PERFIL"].ToString());
+                    user.ESTADO = Convert.ToInt32(fila["ESTADO"].ToString());
+                }
+
+                return user;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+        }
+
     }
 }
