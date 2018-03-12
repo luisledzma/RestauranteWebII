@@ -6,11 +6,12 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Login</title>
+
     <link href="Content/Bootstrap/bootstrap.css" rel="stylesheet" />
     <link href="Content/Animate/animate.css" rel="stylesheet" />
     <link href="Assets/css/estilos.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Condensed" rel="stylesheet" />
-    <link href="sticky-footer.css" rel="stylesheet" />
+
 
 
     <style>
@@ -27,7 +28,14 @@
             transform: translateX(-50%) translateY(-50%);
             background: url(polina.jpg) no-repeat;
             background-size: cover;
+            -webkit-filter: blur(10px);
+            -moz-filter: blur(10px);
+            -ms-filter: blur(10px);
+            filter: blur(10px);
         }
+
+
+        
 
 
         @media (max-width:576px) {
@@ -35,15 +43,17 @@
                 max-width: 295px;
             }
 
-           .btnModal {
+            .btnModal {
                 padding: 6px 3px !important;
-                font-size : 15px;
+                font-size: 15px;
             }
-            #btnModal{
+
+            #btnModal {
                 padding-top: 50px;
             }
-            h3{
-                font-size:15px;
+
+            h3 {
+                font-size: 15px;
             }
         }
 
@@ -51,18 +61,22 @@
             .alert {
                 width: 295px;
             }
+
             .btnModal {
                 padding: 8px 4px !important;
-                font-size : 17px;
+                font-size: 17px;
             }
-            #btnModal{
+
+            #btnModal {
                 padding-top: 25px;
             }
-            h3{
-                font-size:20px;
+
+            h3 {
+                font-size: 20px;
             }
-            .word{
-                font-size:25px;
+
+            .word {
+                font-size: 25px;
             }
         }
 
@@ -70,18 +84,22 @@
             .alert {
                 width: 295px;
             }
+
             .btnModal {
                 padding: 10px 5px !important;
-                font-size : 20px;
+                font-size: 20px;
             }
-            #btnModal{
+
+            #btnModal {
                 padding-top: 50px;
             }
-            h3{
-                font-size:25px;
+
+            h3 {
+                font-size: 25px;
             }
-            .word{
-                font-size:30px;
+
+            .word {
+                font-size: 30px;
             }
         }
 
@@ -89,41 +107,49 @@
             .alert {
                 width: 295px;
             }
+
             .btnModal {
                 padding: 10px 5px !important;
-                font-size : 20px;
+                font-size: 20px;
             }
-            #btnModal{
+
+            #btnModal {
                 padding-top: 100px;
             }
-            h3{
-                font-size:30px;
+
+            h3 {
+                font-size: 30px;
             }
-            .word{
-                font-size:40px;
+
+            .word {
+                font-size: 40px;
             }
         }
-        
-        @media (min-width: 1200px)  {
+
+        @media (min-width: 1200px) {
             .alert {
                 width: 295px;
             }
+
             .btnModal {
                 padding: 10px 5px !important;
-                font-size : 20px;
+                font-size: 20px;
             }
-            #btnModal{
+
+            #btnModal {
                 padding-top: 200px;
             }
-            h3{
-                font-size:40px;
+
+            h3 {
+                font-size: 40px;
             }
-            .word{
-                font-size:50px;
+
+            .word {
+                font-size: 50px;
             }
         }
-        
-        
+
+
 
         .container h3 {
             color: snow;
@@ -185,9 +211,6 @@
         #btnModal > a::selection {
             background-color: #FF3346;
         }
-
-        
-        
     </style>
 
 </head>
@@ -198,12 +221,14 @@
         <video autoplay="autoplay" loop="loop" muted="muted" poster="screenshot.jpg" id="background">
             <source src="Assets/video/Slicing.mp4" type="video/mp4" />
         </video>
+        
+        
 
         <div class="container" style="padding-top: 50px;">
             <div class="row">
                 <div class="col-md-6 col-xs-12 col-sm-12 offset-md-3 text-center">
-                    <div class="col-md-12 col-xs-12 col-sm-12 mx-auto fadeIn wow" data-wow-duration="1000ms" data-wow-delay="400ms" style="font-family: 'Roboto Condensed',sans-serif; ">
-                        <h3><b style="color:#FF3346;">Control</b>  del <i class="word" >Restaurante</i></h3>
+                    <div class="col-md-12 col-xs-12 col-sm-12 mx-auto fadeIn wow" data-wow-duration="1000ms" data-wow-delay="400ms" style="font-family: 'Roboto Condensed',sans-serif;">
+                        <h3><b style="color: #FF3346;">Control</b>  del <i class="word">Restaurante</i></h3>
                         <h5></h5>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
@@ -222,9 +247,9 @@
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="fa fa-times"></span></button>
                             <div class="title col-md-12">
-                                <h3 style="font-family: 'Arial' !important; color: black">
+                                <h3 style="font-family: 'Arial' !important;">
                                     <asp:Label ID="lbl11" runat="server" Text="Restaurante"></asp:Label></h3>
-                                <h5 style="font-family: 'Arial' !important; color: black">
+                                <h5 style="font-family: 'Arial' !important;">
                                     <asp:Label ID="lbl12" runat="server" Text="Inicio de Sesión"></asp:Label></h5>
                             </div>
                         </div>
@@ -275,7 +300,7 @@
                                                                 <ProgressTemplate>
                                                                     <div class="loading-panel">
                                                                         <div class="loading-container">
-                                                                            <img class="mx-auto d-block" src="Assets/img/loading.svg" />
+                                                                            <img class="mx-auto d-block" src="Assets/img/loading.svg" style="width:150px; height:150px;" />
                                                                         </div>
                                                                     </div>
 
@@ -327,7 +352,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <asp:Label ID="lblMensaje" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -341,12 +366,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="Scripts/js/jquery-3.0.0.js"></script>
         <script src="Scripts/js/bootstrap.js"></script>
-        <script src="https://github.com/graingert/WOW/blob/master/src/WOW.js"></script>
+        <script src="Assets/js/wow.js"></script>
+        <script src="Assets/js/wow.min.js"></script>
 
         <!--use just the brands and solid styles-->
         <script src="https://use.fontawesome.com/releases/v5.0.6/js/brands.js"></script>
         <script src="https://use.fontawesome.com/releases/v5.0.6/js/solid.js"></script>
         <script src="https://use.fontawesome.com/releases/v5.0.6/js/fontawesome.js"></script>
+
 
         <script>
             $(document).ready(function () {
@@ -355,7 +382,20 @@
                 });
             });
 
-            
+            new WOW().init();
+
+
+            $(document).ready(function () {
+                var $magic = $(".magic"),
+                    magicWHalf = $magic.width() / 2;
+                $(document).on("mousemove", function (e) {
+                    $magic.css({ "left": e.pageX - magicWHalf, "top": e.pageY - magicWHalf });
+                });
+            });
+
+
+
+
         </script>
     </form>
 

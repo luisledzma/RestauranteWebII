@@ -4,53 +4,57 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Restaurante</title>
+
     <link href="Content/Bootstrap/bootstrap.css" rel="stylesheet" />
     <link href="Content/Animate/animate.css" rel="stylesheet" />
-    <script src="Scripts/js/jquery-3.0.0.js"></script>
-    <script src="Scripts/js/bootstrap.js"></script>
+    <link href="Assets/css/estilos.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Condensed" rel="stylesheet" />
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Restaurante</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-            </ul>
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mantenimientos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Mantenimiento 1</a>
+                            <a class="dropdown-item" href="#">Mantenimiento 2</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reportes</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto offset">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i style="margin-right:5px;" class="fas fa-user"></i><asp:Label ID="lblmiPerfil" runat="server" Text=""></asp:Label></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#">Mi cuenta</a>
+                            <div class="dropdown-divider"></div>
+                            <asp:LinkButton CssClass="dropdown-item" ID="btnCerrarSesion" runat="server" OnClick="btnCerrarSesion_Click">Cerrar Sesión</asp:LinkButton>
+                        </div>
+                    </li>
+                </ul>
+
             </div>
         </nav>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
             </asp:ContentPlaceHolder>
         </div>
         <div>
@@ -58,5 +62,66 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
+    <footer class="fixed-bottom">
+        <div class="container-fluid py-3 bg-dark text-white mt-4 ">
+            <div class="row d-block mx-auto">
+                <span class="text-warning">Copyrigth&copy;</span><asp:Label ID="Label1" runat="server" Text="All rights Reserved "></asp:Label>
+            </div>
+            <div class="row d-block mx-auto">
+                <asp:Label ID="Label2" runat="server" Text="Created by: Anthony, Joszef and Luis "></asp:Label>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Restaurante</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="Scripts/js/jquery-3.0.0.js"></script>
+    <script src="Scripts/js/bootstrap.js"></script>
+    <script src="Assets/js/wow.js"></script>
+    <script src="Assets/js/wow.min.js"></script>
+
+    <!--use just the brands and solid styles-->
+    <script src="https://use.fontawesome.com/releases/v5.0.6/js/brands.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.6/js/solid.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.6/js/fontawesome.js"></script>
+
+
+    <script>
+        function nobackbutton() {
+            window.location.hash = "no-back-button";
+            window.location.hash = "Again-No-back-button" //chrome         
+            window.onhashchange = function () {
+                window.location.hash = "no-back-button";
+            }
+        }
+
+
+        $(document).ready(function () {
+            $(".modal a").not(".dropdown-toggle").on("click", function () {
+                $(".modal").modal("hide");
+            });
+        });
+    </script>
+
 </body>
 </html>

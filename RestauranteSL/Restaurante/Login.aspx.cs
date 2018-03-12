@@ -45,7 +45,8 @@ namespace Restaurante
 
                 if (existe)
                 {
-                    Session["Login"] = user;
+                    Session["Login"] = miUsuario;
+                    Response.Redirect("Principal.aspx");
                 }
                 else
                 {
@@ -54,9 +55,6 @@ namespace Restaurante
                     return;
                 }
                 
-
-
-
                  
             }
             catch (Exception ex)

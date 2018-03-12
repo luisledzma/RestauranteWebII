@@ -71,10 +71,13 @@
     <Content Include="Assets\css\estilos.css" />
     <Content Include="Assets\img\loading.svg" />
     <Content Include="Assets\img\logo.png" />
+    <Content Include="Assets\js\wow.js" />
+    <Content Include="Assets\js\wow.min.js" />
     <Content Include="Assets\video\Slicing.mp4" />
     <Content Include="Content\Animate\animate.css" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
+    <Content Include="Principal.aspx" />
     <Content Include="RST.Master" />
     <Content Include="Scripts\js\jquery-3.0.0.slim.min.map" />
     <Content Include="Scripts\js\jquery-3.0.0.min.map" />
@@ -147,6 +150,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.aspx.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Principal.aspx.designer.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RST.Master.cs">
