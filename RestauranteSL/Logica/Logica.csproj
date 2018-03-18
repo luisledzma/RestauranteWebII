@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FuncionesL.cs" />
+    <Compile Include="MesaL.cs" />
     <Compile Include="UsuarioL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

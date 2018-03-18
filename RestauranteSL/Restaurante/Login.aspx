@@ -247,7 +247,7 @@
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="fa fa-times"></span></button>
                             <div class="title col-md-12">
-                                <h3 style="font-family: 'Arial' !important;">
+                                <h3 style="font-family: 'Arial' !important; color:black">
                                     <asp:Label ID="lbl11" runat="server" Text="Restaurante"></asp:Label></h3>
                                 <h5 style="font-family: 'Arial' !important;">
                                     <asp:Label ID="lbl12" runat="server" Text="Inicio de Sesión"></asp:Label></h5>
@@ -325,13 +325,6 @@
                                         </div>
                                     </div>
 
-                                    <div class="box-footer">
-
-                                        <div class="pull-right">
-                                            <a style="color: black" href="#" class="boton">
-                                                <asp:Label ID="lbl13" runat="server" Text="">¿Olvidó su contraseña?</asp:Label></a>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
 

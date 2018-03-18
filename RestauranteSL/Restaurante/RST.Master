@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="RST.master.cs" Inherits="Restaurante.RST" %>
+﻿ <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="RST.master.cs" Inherits="Restaurante.RST" %>
 
 <!DOCTYPE html>
 
@@ -17,7 +17,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">Restaurante</a>
@@ -31,8 +30,8 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mantenimientos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Mantenimiento 1</a>
-                            <a class="dropdown-item" href="#">Mantenimiento 2</a>
+                            <a class="dropdown-item" href="MantenimientoUsuarios.aspx">Mantenimiento Meseros</a>
+                            <a class="dropdown-item" href="MantenimientoMesas.aspx">Mantenimiento Mesas</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -62,7 +61,7 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
-    <footer class="fixed-bottom">
+    <footer>
         <div class="container-fluid py-3 bg-dark text-white mt-4 ">
             <div class="row d-block mx-auto">
                 <span class="text-warning">Copyrigth&copy;</span><asp:Label ID="Label1" runat="server" Text="All rights Reserved "></asp:Label>

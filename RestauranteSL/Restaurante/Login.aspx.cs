@@ -33,7 +33,8 @@ namespace Restaurante
                 UsuarioE user = new UsuarioE();
                 bool existe = false;
                 user.IDENTIFICACION = txtUsuario.Text;
-                user.CONTRASENNA = new FuncionesL().Encrypt(txtContrasena.Text);
+                user.CONTRASENNA = txtContrasena.Text;
+                //user.CONTRASENNA = new FuncionesL().Encrypt(txtContrasena.Text);
                 UsuarioE miUsuario = logica.SeleccionarUsuario(user);
 
 
@@ -45,8 +46,23 @@ namespace Restaurante
 
                 if (existe)
                 {
-                    Session["Login"] = miUsuario;
-                    Response.Redirect("Principal.aspx");
+                    if (miUsuario.ESTADO!=0)
+                    {
+                        if (miUsuario.FK_PERFIL == 1)
+                        {
+                            Session["Login"] = miUsuario;
+                            Response.Redirect("MenuGerente.aspx");
+                        }else
+                        {
+                            Session["Login"] = miUsuario;
+                            Response.Redirect("MenuGerente.aspx");
+                        }
+                    }else
+                    {
+                        lblAlert.Text = "El usuario se encuentra inactivo.";
+                        errorMsj.Attributes.Add("style", "display:block;");
+                        return;
+                    }
                 }
                 else
                 {

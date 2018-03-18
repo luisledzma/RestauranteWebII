@@ -12,6 +12,7 @@ namespace Logica
     public class UsuarioL
     {
         private UsuarioD datos = new UsuarioD(); 
+
         public UsuarioE SeleccionarUsuario(UsuarioE usuario)
         {
             try
@@ -36,6 +37,38 @@ namespace Logica
             {
                 throw new ApplicationException(ex.Message);
             }
+        }
+
+        public static void Nuevo(UsuarioE user)
+        {
+            UsuarioD.Insertar(user);
+        }
+
+        public static List<UsuarioE> ObtenerTodos()
+        {
+            List<UsuarioE> lista = new List<UsuarioE>();
+            DataSet ds = UsuarioD.SeleccionarUsuarios();
+
+            foreach (DataRow fila in ds.Tables[0].Rows)
+            {
+                UsuarioE users = new UsuarioE();
+                users.IDENTIFICACION = fila["IDENTIFICACION"].ToString() ;
+                users.NOMBRE = fila["NOMBRE"].ToString();
+                users.APELLIDOS = fila["APELLIDOS"].ToString();
+                users.TELEFONO = fila["TELEFONO"].ToString();
+                users.CORREO_ELECTRONICO = fila["CORREO_ELECTRONICO"].ToString();
+                users.CONTRASENNA = fila["CONTRASENNA"].ToString();
+                users.FK_PERFIL = Convert.ToInt16( fila["FK_PERFIL"]);
+                users.ESTADO = Convert.ToInt16(fila["ESTADO"]);
+
+                lista.Add(users);
+            }
+            return lista;
+        }
+
+        public static void Modificar(UsuarioE user)
+        {
+            UsuarioD.Modificar(user);
         }
 
     }

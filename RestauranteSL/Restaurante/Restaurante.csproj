@@ -45,6 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=18.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Users\antho\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -76,6 +80,9 @@
     <Content Include="Assets\video\Slicing.mp4" />
     <Content Include="Content\Animate\animate.css" />
     <Content Include="Login.aspx" />
+    <Content Include="MantenimientoMesas.aspx" />
+    <Content Include="MantenimientoUsuarios.aspx" />
+    <Content Include="MenuGerente.aspx" />
     <Content Include="packages.config" />
     <Content Include="Principal.aspx" />
     <Content Include="RST.Master" />
@@ -151,6 +158,27 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MantenimientoMesas.aspx.cs">
+      <DependentUpon>MantenimientoMesas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MantenimientoMesas.aspx.designer.cs">
+      <DependentUpon>MantenimientoMesas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MantenimientoUsuarios.aspx.cs">
+      <DependentUpon>MantenimientoUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MantenimientoUsuarios.aspx.designer.cs">
+      <DependentUpon>MantenimientoUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuGerente.aspx.cs">
+      <DependentUpon>MenuGerente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuGerente.aspx.designer.cs">
+      <DependentUpon>MenuGerente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Principal.aspx.cs">
       <DependentUpon>Principal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -196,7 +224,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>3213</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:3213/</IISUrl>
+          <IISUrl>http://localhost:39391/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
