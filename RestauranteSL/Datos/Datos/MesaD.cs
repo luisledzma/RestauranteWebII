@@ -13,38 +13,62 @@ namespace Datos.Datos
     {
         public static void Insertar(MesaE mesa)
         {
-            Database db = DatabaseFactory.CreateDatabase("Default");
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase("Default");
 
-            SqlCommand comando = new SqlCommand("SP_SEG_INSERTAR_MESA");
-            comando.CommandType = CommandType.StoredProcedure;
+                SqlCommand comando = new SqlCommand("SP_SEG_INSERTAR_MESA");
+                comando.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@ID", mesa.ID);
-            comando.Parameters.AddWithValue("@DESCRIPCION", mesa.DESCRIPCION);
-            comando.Parameters.AddWithValue("@ESTADO", mesa.ESTADO);
-            comando.Parameters.AddWithValue("@CONDICION", mesa.CONDICION);
-            db.ExecuteNonQuery(comando);
+                comando.Parameters.AddWithValue("@ID", mesa.ID);
+                comando.Parameters.AddWithValue("@DESCRIPCION", mesa.DESCRIPCION);
+                comando.Parameters.AddWithValue("@ESTADO", mesa.ESTADO);
+                comando.Parameters.AddWithValue("@CONDICION", mesa.CONDICION);
+                db.ExecuteNonQuery(comando);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+            
         }
 
         public static DataSet SeleccionarTodas()
         {
-            Database db = DatabaseFactory.CreateDatabase("Default");
-            SqlCommand comando = new SqlCommand("SP_SELECCIONAR_TODAS_MESAS ");
-            comando.CommandType = CommandType.StoredProcedure;
-            DataSet ds = db.ExecuteReader(comando, "TBL_MESA");
-            return ds;
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase("Default");
+                SqlCommand comando = new SqlCommand("SP_SELECCIONAR_TODAS_MESAS ");
+                comando.CommandType = CommandType.StoredProcedure;
+                DataSet ds = db.ExecuteReader(comando, "TBL_MESA");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+            
         }
 
         public static void Modificar(MesaE mesa)
         {
-            Database db = DatabaseFactory.CreateDatabase("Default");
-            SqlCommand comando = new SqlCommand("SP_SEG_MODIFICAR_MESA");
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@ID", mesa.ID);
-            comando.Parameters.AddWithValue("@DESCRIPCION", mesa.DESCRIPCION);
-            comando.Parameters.AddWithValue("@ESTADO", mesa.ESTADO);
-            comando.Parameters.AddWithValue("@CONDICION", mesa.CONDICION);
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase("Default");
+                SqlCommand comando = new SqlCommand("SP_SEG_MODIFICAR_MESA");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@ID", mesa.ID);
+                comando.Parameters.AddWithValue("@DESCRIPCION", mesa.DESCRIPCION);
+                comando.Parameters.AddWithValue("@ESTADO", mesa.ESTADO);
+                comando.Parameters.AddWithValue("@CONDICION", mesa.CONDICION);
 
-            db.ExecuteNonQuery(comando);
+                db.ExecuteNonQuery(comando);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+            
         }
     }
 }

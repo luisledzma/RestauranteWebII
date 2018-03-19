@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Restaurante
 {
-    public partial class MenuGerente : System.Web.UI.Page
+    public partial class MantenimientoProductos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

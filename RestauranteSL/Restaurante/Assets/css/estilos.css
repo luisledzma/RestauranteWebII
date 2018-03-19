@@ -189,3 +189,72 @@
 }
 
 
+.btn-primary{
+    border-radius: 20px 20px;
+    color: #FF3346 !important;
+    border-color: #FF3346 !important;
+    background-color:snow !important;
+}
+
+.card-body > a:hover {
+            background-color: #FF3346 !important;
+            color: snow !important;
+            border-color: #FF3346 !important;
+        }
+
+.card-body > a::selection {
+    background-color: #FF3346;
+}
+
+
+.row > .form-group > .btn-primary:hover {
+    background-color: #FF3346 !important;
+    color: snow !important;
+    border-color: #FF3346 !important;
+}
+tr > td > .btn-primary:hover{
+    background-color: #FF3346 !important;
+    color: snow !important;
+    border-color: #FF3346 !important;
+}
+
+
+.card-header > h5 > .nav-link{
+    color: #416D4C !important;
+
+}
+
+
+.btn-secondary{
+    border-radius: 20px 20px;
+    color: #416D4C !important;
+    border-color: #D4EDDA !important;
+    background-color:snow !important;
+}
+
+.row > .form-group > .btn-secondary:hover {
+    background-color: #D4EDDA !important;
+    color: #416D4C !important;
+    
+}
+tr > td > .btn-secondary:hover{
+    background-color: #D4EDDA !important;
+    color: #416D4C !important;
+    
+}
+
+.nav-tabs > li > .nav-link{
+    color: #416D4C !important;
+}
+
+.nav-tabs > li > .active {
+    background-color: #D4EDDA !important;
+}
+
+
+
+
+.dropdown-menu > .dropdown-item:hover{
+    background-color : #343A40;
+    color:snow;
+}

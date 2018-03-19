@@ -1,4 +1,4 @@
-﻿ <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="RST.master.cs" Inherits="Restaurante.RST" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="RST.master.cs" Inherits="Restaurante.RST" %>
 
 <!DOCTYPE html>
 
@@ -11,37 +11,50 @@
     <link href="Content/Animate/animate.css" rel="stylesheet" />
     <link href="Assets/css/estilos.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Condensed" rel="stylesheet" />
+    <link href="Content/Bootstrap/bootstrap-grid.css" rel="stylesheet" />
+    
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-
+    <form id="form1" runat="server" >
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Restaurante</a>
+            <a class="navbar-brand" href="Principal.aspx">Restaurante</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" id="mantenimientos" runat="server" style="display:none;">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mantenimientos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="MantenimientoUsuarios.aspx">Mantenimiento Meseros</a>
-                            <a class="dropdown-item" href="MantenimientoMesas.aspx">Mantenimiento Mesas</a>
+                            <a class="dropdown-item" href="MantenimientoUsuarios.aspx">Usuarios</a>
+                            <a class="dropdown-item" href="MantenimientoMesas.aspx">Mesas</a>
+                            <a class="dropdown-item" href="MantenimientoProductos.aspx">Productos</a>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Reportes</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" runat="server" id="reportes" style="display:none;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reportes
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="reportes">
+                            <a id="ventas1" runat="server" style="display:none;" class="dropdown-item" href="#">Ventas por rango de fechas</a>
+                            <a id="ventas2" runat="server" style="display:none;" class="dropdown-item" href="#">Ventas por medio de pago</a>
+                            <a id="ventas3" runat="server" style="display:none;" class="dropdown-item" href="#">Ventas por mesa, mesero o producto</a>
+                        </div>
+                    </li>
+                    <li class="nav-item" style="display:none;" runat="server" id="comandas">
+                        <a class="nav-link" href="#">Gestión de Comandas</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto offset">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i style="margin-right:5px;" class="fas fa-user"></i><asp:Label ID="lblmiPerfil" runat="server" Text=""></asp:Label></a>
+                            <i style="margin-right: 5px;" class="fas fa-user"></i>
+                            <asp:Label ID="lblmiPerfil" runat="server" Text=""></asp:Label></a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="#">Mi cuenta</a>
                             <div class="dropdown-divider"></div>
@@ -52,16 +65,41 @@
 
             </div>
         </nav>
-        <div>
+        <div class="container-fluid">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-        <div>
+        <div class="container-fluid" style="padding-bottom:100px;">
             <asp:ContentPlaceHolder ID="js" runat="server">
             </asp:ContentPlaceHolder>
         </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitle">Restaurante</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                            <ContentTemplate>
+                                <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </form>
-    <footer>
+    <footer class="fixed-bottom ">
         <div class="container-fluid py-3 bg-dark text-white mt-4 ">
             <div class="row d-block mx-auto">
                 <span class="text-warning">Copyrigth&copy;</span><asp:Label ID="Label1" runat="server" Text="All rights Reserved "></asp:Label>
@@ -73,25 +111,7 @@
         </div>
     </footer>
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitle">Restaurante</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="Scripts/js/jquery-3.0.0.js"></script>
@@ -114,6 +134,7 @@
             }
         }
 
+        new WOW().init();
 
         $(document).ready(function () {
             $(".modal a").not(".dropdown-toggle").on("click", function () {

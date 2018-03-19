@@ -13,62 +13,62 @@ namespace Logica
 
 
 
-        #region Encriptar
+        //#region Encriptar
 
 
-        public string Encrypt(string text)
+        //public string Encrypt(string text)
 
-        {
+        //{
 
-            return Encriptar(text,"progra_project", "s@lAvz", "MD5", 1, "@1B2c3D4e5F6g7H8", 128);
+        //    return Encriptar(text,"progra_project", "s@lAvz", "MD5", 1, "@1B2c3D4e5F6g7H8", 128);
 
-        }
+        //}
 
        
 
-        private string Encriptar(string textoQueEncriptaremos,string passBase, string saltValue, string hashAlgorithm,int passwordIterations, string initVector, int keySize)
+        //private string Encriptar(string textoQueEncriptaremos,string passBase, string saltValue, string hashAlgorithm,int passwordIterations, string initVector, int keySize)
 
-        {
+        //{
 
-            byte[] initVectorBytes = Encoding.ASCII.GetBytes(initVector);
+        //    byte[] initVectorBytes = Encoding.ASCII.GetBytes(initVector);
 
-            byte[] saltValueBytes = Encoding.ASCII.GetBytes(saltValue);
+        //    byte[] saltValueBytes = Encoding.ASCII.GetBytes(saltValue);
 
-            byte[] plainTextBytes = Encoding.UTF8.GetBytes(textoQueEncriptaremos);
+        //    byte[] plainTextBytes = Encoding.UTF8.GetBytes(textoQueEncriptaremos);
 
-            PasswordDeriveBytes password = new PasswordDeriveBytes(passBase,saltValueBytes, hashAlgorithm, passwordIterations);
+        //    PasswordDeriveBytes password = new PasswordDeriveBytes(passBase,saltValueBytes, hashAlgorithm, passwordIterations);
 
-            byte[] keyBytes = password.GetBytes(keySize / 8);
+        //    byte[] keyBytes = password.GetBytes(keySize / 8);
 
-            RijndaelManaged symmetricKey = new RijndaelManaged()
-            {
+        //    RijndaelManaged symmetricKey = new RijndaelManaged()
+        //    {
 
-                Mode = CipherMode.CBC
-            };
+        //        Mode = CipherMode.CBC
+        //    };
 
-            ICryptoTransform encryptor = symmetricKey.CreateEncryptor(keyBytes,initVectorBytes);
+        //    ICryptoTransform encryptor = symmetricKey.CreateEncryptor(keyBytes,initVectorBytes);
 
-            MemoryStream memoryStream = new MemoryStream();
+        //    MemoryStream memoryStream = new MemoryStream();
 
-            CryptoStream cryptoStream = new CryptoStream(memoryStream, encryptor,CryptoStreamMode.Write);
+        //    CryptoStream cryptoStream = new CryptoStream(memoryStream, encryptor,CryptoStreamMode.Write);
 
-            cryptoStream.Write(plainTextBytes, 0, plainTextBytes.Length);
+        //    cryptoStream.Write(plainTextBytes, 0, plainTextBytes.Length);
 
-            cryptoStream.FlushFinalBlock();
+        //    cryptoStream.FlushFinalBlock();
 
-            byte[] cipherTextBytes = memoryStream.ToArray();
+        //    byte[] cipherTextBytes = memoryStream.ToArray();
 
-            memoryStream.Close();
+        //    memoryStream.Close();
 
-            cryptoStream.Close();
+        //    cryptoStream.Close();
 
-            string cipherText = Convert.ToBase64String(cipherTextBytes);
+        //    string cipherText = Convert.ToBase64String(cipherTextBytes);
 
-            return cipherText;
+        //    return cipherText;
 
-        }
+        //}
 
-        #endregion
+        //#endregion
 
     }
 }

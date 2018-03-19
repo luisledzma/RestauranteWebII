@@ -41,34 +41,58 @@ namespace Logica
 
         public static void Nuevo(UsuarioE user)
         {
-            UsuarioD.Insertar(user);
+            try
+            {
+                UsuarioD.Insertar(user);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+            
         }
 
         public static List<UsuarioE> ObtenerTodos()
         {
-            List<UsuarioE> lista = new List<UsuarioE>();
-            DataSet ds = UsuarioD.SeleccionarUsuarios();
-
-            foreach (DataRow fila in ds.Tables[0].Rows)
+            try
             {
-                UsuarioE users = new UsuarioE();
-                users.IDENTIFICACION = fila["IDENTIFICACION"].ToString() ;
-                users.NOMBRE = fila["NOMBRE"].ToString();
-                users.APELLIDOS = fila["APELLIDOS"].ToString();
-                users.TELEFONO = fila["TELEFONO"].ToString();
-                users.CORREO_ELECTRONICO = fila["CORREO_ELECTRONICO"].ToString();
-                users.CONTRASENNA = fila["CONTRASENNA"].ToString();
-                users.FK_PERFIL = Convert.ToInt16( fila["FK_PERFIL"]);
-                users.ESTADO = Convert.ToInt16(fila["ESTADO"]);
+                List<UsuarioE> lista = new List<UsuarioE>();
+                DataSet ds = UsuarioD.SeleccionarUsuarios();
 
-                lista.Add(users);
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    UsuarioE users = new UsuarioE();
+                    users.IDENTIFICACION = fila["IDENTIFICACION"].ToString();
+                    users.NOMBRE = fila["NOMBRE"].ToString();
+                    users.APELLIDOS = fila["APELLIDOS"].ToString();
+                    users.TELEFONO = fila["TELEFONO"].ToString();
+                    users.CORREO_ELECTRONICO = fila["CORREO_ELECTRONICO"].ToString();
+                    users.CONTRASENNA = fila["CONTRASENNA"].ToString();
+                    users.FK_PERFIL = Convert.ToInt16(fila["FK_PERFIL"]);
+                    users.ESTADO = Convert.ToInt16(fila["ESTADO"]);
+
+                    lista.Add(users);
+                }
+                return lista;
             }
-            return lista;
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+            
         }
 
         public static void Modificar(UsuarioE user)
         {
-            UsuarioD.Modificar(user);
+            try
+            {
+                UsuarioD.Modificar(user);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+            
         }
 
     }
