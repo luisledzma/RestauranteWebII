@@ -73,16 +73,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\estilos.css" />
+    <Content Include="Assets\img\food.png" />
     <Content Include="Assets\img\loading.svg" />
     <Content Include="Assets\img\logo.png" />
+    <Content Include="Assets\img\mesa.png" />
+    <Content Include="Assets\img\mesero.png" />
+    <Content Include="Assets\img\reporte.png" />
     <Content Include="Assets\js\wow.js" />
     <Content Include="Assets\js\wow.min.js" />
     <Content Include="Assets\video\Slicing.mp4" />
     <Content Include="Content\Animate\animate.css" />
     <Content Include="Login.aspx" />
     <Content Include="MantenimientoMesas.aspx" />
+    <Content Include="MantenimientoProductos.aspx" />
     <Content Include="MantenimientoUsuarios.aspx" />
-    <Content Include="MenuGerente.aspx" />
     <Content Include="packages.config" />
     <Content Include="Principal.aspx" />
     <Content Include="RST.Master" />
@@ -165,19 +169,19 @@
     <Compile Include="MantenimientoMesas.aspx.designer.cs">
       <DependentUpon>MantenimientoMesas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MantenimientoProductos.aspx.cs">
+      <DependentUpon>MantenimientoProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MantenimientoProductos.aspx.designer.cs">
+      <DependentUpon>MantenimientoProductos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MantenimientoUsuarios.aspx.cs">
       <DependentUpon>MantenimientoUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MantenimientoUsuarios.aspx.designer.cs">
       <DependentUpon>MantenimientoUsuarios.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="MenuGerente.aspx.cs">
-      <DependentUpon>MenuGerente.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MenuGerente.aspx.designer.cs">
-      <DependentUpon>MenuGerente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Principal.aspx.cs">
       <DependentUpon>Principal.aspx</DependentUpon>

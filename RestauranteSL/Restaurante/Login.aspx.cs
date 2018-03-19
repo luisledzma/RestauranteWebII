@@ -39,25 +39,19 @@ namespace Restaurante
 
 
 
-                if (miUsuario.IDENTIFICACION != null && miUsuario.CONTRASENNA != null)
+                if (miUsuario.IDENTIFICACION != null && miUsuario.CONTRASENNA != null )
                 {
                     existe = true;
                 }
 
                 if (existe)
                 {
-                    if (miUsuario.ESTADO!=0)
+                    if (miUsuario.ESTADO != 0)
                     {
-                        if (miUsuario.FK_PERFIL == 1)
-                        {
-                            Session["Login"] = miUsuario;
-                            Response.Redirect("MenuGerente.aspx");
-                        }else
-                        {
-                            Session["Login"] = miUsuario;
-                            Response.Redirect("MenuGerente.aspx");
-                        }
-                    }else
+                        Session["Login"] = miUsuario;
+                        Response.Redirect("Principal.aspx");   
+                    }
+                    else
                     {
                         lblAlert.Text = "El usuario se encuentra inactivo.";
                         errorMsj.Attributes.Add("style", "display:block;");

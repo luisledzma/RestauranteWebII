@@ -13,30 +13,54 @@ namespace Logica
     {
         public static void Nuevo(MesaE mesa)
         {
-            MesaD.Insertar(mesa);
+            try
+            {
+                MesaD.Insertar(mesa);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+            
         }
 
         public static List<MesaE> ObtenerTodos()
         {
-            List<MesaE> lista = new List<MesaE>();
-            DataSet ds = MesaD.SeleccionarTodas();
-
-            foreach (DataRow fila in ds.Tables[0].Rows)
+            try
             {
-                MesaE mesa = new MesaE();
-                mesa.ID = fila["ID"].ToString();
-                mesa.DESCRIPCION = fila["DESCRIPCION"].ToString();
-                mesa.ESTADO = Convert.ToInt16( fila["ESTADO"]);
-                mesa.CONDICION = fila["CONDICION"].ToString();
+                List<MesaE> lista = new List<MesaE>();
+                DataSet ds = MesaD.SeleccionarTodas();
 
-                lista.Add(mesa);
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    MesaE mesa = new MesaE();
+                    mesa.ID = fila["ID"].ToString();
+                    mesa.DESCRIPCION = fila["DESCRIPCION"].ToString();
+                    mesa.ESTADO = Convert.ToInt16(fila["ESTADO"]);
+                    mesa.CONDICION = fila["CONDICION"].ToString();
+
+                    lista.Add(mesa);
+                }
+                return lista;
             }
-            return lista;
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+            
         }
 
         public static void Modificar(MesaE mesa)
         {
-            MesaD.Modificar(mesa);
+            try
+            {
+                MesaD.Modificar(mesa);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+            
         }
     }
 }
