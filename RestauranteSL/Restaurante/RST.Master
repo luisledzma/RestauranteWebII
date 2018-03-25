@@ -47,7 +47,7 @@
                         </div>
                     </li>
                     <li class="nav-item" style="display:none;" runat="server" id="comandas">
-                        <a class="nav-link" href="#">Gestión de Comandas</a>
+                        <a class="nav-link" href="GestionComandas.aspx">Gestión de Comandas</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto offset">

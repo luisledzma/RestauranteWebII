@@ -8,14 +8,15 @@ namespace Entidades
 {
     public class ProductoE
     {
+        public int ID { get; set; }
 
-        public string PRODUCTO { get; set; }
+        public string NOMBRE { get; set; }
 
         public string DESCRIPCION { get; set; }
 
-        public string CATEGORIA { get; set; }
+        public int PRECIO { get; set; }
 
-        public int CANTIDAD { get; set; }
+        public string CATEGORIA { get; set; }
 
         public int ESTADO { get; set; }
     }

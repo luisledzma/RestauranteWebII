@@ -2,7 +2,6 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -22,40 +21,44 @@
 
                         <div class="col-lg-11 offset-lg-1">
                             <div class="form-group row">
-                                <asp:GridView ID="grvListado" runat="server" CssClass="table table-bordered table-hover"
-                                    AutoGenerateColumns="false"
-                                    DataKeyNames="IDENTIFICACION"
-                                    AutoGenerateEditButton="false"
-                                    OnRowEditing="grvListado_RowEditing"
-                                    OnRowCancelingEdit="grvListado_RowCancelingEdit"
-                                    OnRowDataBound="grvListado_RowDataBound"
-                                    OnRowUpdating="grvListado_RowUpdating"
-                                    GridLines="None">
+                                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                    <ContentTemplate>
+                                        <asp:GridView ID="grvListado" runat="server" CssClass="table table-bordered table-hover"
+                                            AutoGenerateColumns="false"
+                                            DataKeyNames="IDENTIFICACION"
+                                            AutoGenerateEditButton="false"
+                                            OnRowEditing="grvListado_RowEditing"
+                                            OnRowCancelingEdit="grvListado_RowCancelingEdit"
+                                            OnRowDataBound="grvListado_RowDataBound"
+                                            OnRowUpdating="grvListado_RowUpdating"
+                                            GridLines="None">
 
-                                    <Columns>
-                                        <asp:BoundField DataField="IDENTIFICACION" HeaderText="Identificaci&#243;n" ReadOnly="True"></asp:BoundField>
-                                        <asp:BoundField DataField="NOMBRE" HeaderText="Nombre" ReadOnly="True"></asp:BoundField>
-                                        <asp:BoundField DataField="APELLIDOS" HeaderText="Apellidos" ReadOnly="True"></asp:BoundField>
-                                        <asp:BoundField DataField="TELEFONO" HeaderText="Tel&#233;fono" ReadOnly="True"></asp:BoundField>
-                                        <asp:BoundField DataField="CORREO_ELECTRONICO" HeaderText="Correo Electronico" ReadOnly="True"></asp:BoundField>
-                                        <asp:BoundField DataField="FK_PERFIL" HeaderText="Perfil" ReadOnly="True"></asp:BoundField>
+                                            <Columns>
+                                                <asp:BoundField DataField="IDENTIFICACION" HeaderText="Identificaci&#243;n" ReadOnly="True"></asp:BoundField>
+                                                <asp:BoundField DataField="NOMBRE" HeaderText="Nombre" ReadOnly="True"></asp:BoundField>
+                                                <asp:BoundField DataField="APELLIDOS" HeaderText="Apellidos" ReadOnly="True"></asp:BoundField>
+                                                <asp:BoundField DataField="TELEFONO" HeaderText="Tel&#233;fono" ReadOnly="True"></asp:BoundField>
+                                                <asp:BoundField DataField="CORREO_ELECTRONICO" HeaderText="Correo Electronico" ReadOnly="True"></asp:BoundField>
+                                                <asp:BoundField DataField="FK_PERFIL" HeaderText="Perfil" ReadOnly="True"></asp:BoundField>
 
-                                        <asp:TemplateField HeaderText="Estado" SortExpression="Estado">
-                                            <EditItemTemplate>
-                                                <asp:DropDownList CssClass="form-control" ID="ddlEstadoEdit" runat="server">
-                                                    <asp:ListItem Value="0">Inactivo</asp:ListItem>
-                                                    <asp:ListItem Value="1">Activo</asp:ListItem>
-                                                </asp:DropDownList>
-                                            </EditItemTemplate>
-                                            <ItemTemplate>
-                                                <asp:Label ID="lblEstado" runat="server" Text='<%# Eval("ESTADO") %>'></asp:Label>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
+                                                <asp:TemplateField HeaderText="Estado" SortExpression="Estado">
+                                                    <EditItemTemplate>
+                                                        <asp:DropDownList CssClass="form-control" ID="ddlEstadoEdit" runat="server">
+                                                            <asp:ListItem Value="0">Inactivo</asp:ListItem>
+                                                            <asp:ListItem Value="1">Activo</asp:ListItem>
+                                                        </asp:DropDownList>
+                                                    </EditItemTemplate>
+                                                    <ItemTemplate>
+                                                        <asp:Label ID="lblEstado" runat="server" Text='<%# Eval("ESTADO") %>'></asp:Label>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
 
-                                        <asp:CommandField ShowEditButton="true" EditText="Editar" ControlStyle-CssClass="btn btn-secondary" />
+                                                <asp:CommandField ShowEditButton="true" EditText="Editar" ControlStyle-CssClass="btn btn-secondary" />
 
-                                    </Columns>
-                                </asp:GridView>
+                                            </Columns>
+                                        </asp:GridView>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
                             </div>
                         </div>
                     </div>
@@ -176,7 +179,7 @@
                                     <asp:Button ID="btnRegistrar" runat="server" OnClick="btnRegistrar_Click" ValidationGroup="FormRegistro" Text="Agregar" CssClass="btn btn-secondary btn-lg" />
                                 </div>
                             </div>
-                            
+
 
                         </div>
                     </div>
@@ -192,5 +195,4 @@
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="js" runat="server">
-    
 </asp:Content>

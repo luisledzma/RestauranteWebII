@@ -63,7 +63,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Gestión de Comandas</h5>
                         <p class="card-text">Muestra la ventana para la gestión de las comandas.</p>
-                        <a href="#" class="btn btn-primary">Presione Aquí</a>
+                        <a href="GestionComandas.aspx" class="btn btn-primary">Presione Aquí</a>
                     </div>
                 </div>
 

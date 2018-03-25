@@ -83,6 +83,7 @@
     <Content Include="Assets\js\wow.min.js" />
     <Content Include="Assets\video\Slicing.mp4" />
     <Content Include="Content\Animate\animate.css" />
+    <Content Include="GestionComandas.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="MantenimientoMesas.aspx" />
     <Content Include="MantenimientoProductos.aspx" />
@@ -155,6 +156,13 @@
     <Content Include="Scripts\js\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GestionComandas.aspx.cs">
+      <DependentUpon>GestionComandas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionComandas.aspx.designer.cs">
+      <DependentUpon>GestionComandas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

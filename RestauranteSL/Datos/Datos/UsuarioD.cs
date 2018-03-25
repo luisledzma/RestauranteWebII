@@ -32,6 +32,24 @@ namespace Datos.Datos
            
         }
 
+        public static DataSet SeleccionarPorId(string id)
+        {
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase("Default");
+                SqlCommand comando = new SqlCommand("SP_SEG_SELECCIONAR_USER_ID");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@IDENTIFICACION", id);
+                DataSet ds = db.ExecuteReader(comando, "TBL_USUARIO");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+
+        }
+
         public static void Insertar(UsuarioE user)
         {
             try

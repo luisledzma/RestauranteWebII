@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComandaE.cs" />
+    <Compile Include="DetalleComandaE.cs" />
     <Compile Include="MesaE.cs" />
     <Compile Include="ProductoE.cs" />
     <Compile Include="UsuarioE.cs" />
