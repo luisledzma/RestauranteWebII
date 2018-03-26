@@ -8,12 +8,14 @@ namespace Entidades
 {
     public class DetalleComandaE
     {
-        public int IDCOMANDA { get; set; }
+        public string IDCOMANDA { get; set; }
 
         public int IDPRODUCTO { get; set; }
 
         public int CANTIDAD { get; set; }
 
-        public int MyProperty { get; set; }
+        public string NOTAS { get; set; }
+        
+        public decimal SUBTOTAL { get; set; }
     }
 }

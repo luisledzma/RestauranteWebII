@@ -98,10 +98,10 @@
                     </div>
                     <div id="collapseTwo1" class="collapse" role="tabpanel" aria-labelledby="headingTwo1" data-parent="#accordion1">
                         <div class="row">
-                            <div class="col-lg-5 text-right">
+                            <div class="col-lg-2 text-right">
                                 <asp:Label ID="Label4" runat="server" Text="Categorias"></asp:Label>
                             </div>
-                            <div class=" col-lg-7 form-group">
+                            <div class=" col-lg-3 form-group">
                                 <asp:DropDownList ID="ddlCategorias" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlCategorias_SelectedIndexChanged" AutoPostBack="true">
                                     <asp:ListItem Value="0">Refresco</asp:ListItem>
                                     <asp:ListItem Value="1">Plato Fuerte</asp:ListItem>

@@ -83,7 +83,33 @@
     <Content Include="Assets\js\wow.min.js" />
     <Content Include="Assets\video\Slicing.mp4" />
     <Content Include="Content\Animate\animate.css" />
+    <Content Include="Content\SmartWizard\dist\css\smart_wizard.css" />
+    <Content Include="Content\SmartWizard\dist\css\smart_wizard.min.css" />
+    <Content Include="Content\SmartWizard\dist\css\smart_wizard_theme_arrows.css" />
+    <Content Include="Content\SmartWizard\dist\css\smart_wizard_theme_arrows.min.css" />
+    <Content Include="Content\SmartWizard\dist\css\smart_wizard_theme_circles.css" />
+    <Content Include="Content\SmartWizard\dist\css\smart_wizard_theme_circles.min.css" />
+    <Content Include="Content\SmartWizard\dist\css\smart_wizard_theme_dots.css" />
+    <Content Include="Content\SmartWizard\dist\css\smart_wizard_theme_dots.min.css" />
+    <Content Include="Content\SmartWizard\dist\js\jquery.smartWizard.js" />
+    <Content Include="Content\SmartWizard\dist\js\jquery.smartWizard.min.js" />
+    <Content Include="Content\SmartWizard\examples\index.html" />
+    <Content Include="Content\SmartWizard\examples\smartwizard-ajax.html" />
+    <Content Include="Content\SmartWizard\examples\smartwizard-events.html" />
+    <Content Include="Content\SmartWizard\examples\smartwizard-input.html" />
+    <Content Include="Content\SmartWizard\examples\smartwizard-modal.html" />
+    <Content Include="Content\SmartWizard\examples\smartwizard-multiple.html" />
+    <Content Include="Content\SmartWizard\gulpfile.js" />
+    <Content Include="Content\SmartWizard\karma.conf.js" />
+    <Content Include="Content\SmartWizard\src\css\smart_wizard.css" />
+    <Content Include="Content\SmartWizard\src\css\smart_wizard_theme_arrows.css" />
+    <Content Include="Content\SmartWizard\src\css\smart_wizard_theme_circles.css" />
+    <Content Include="Content\SmartWizard\src\css\smart_wizard_theme_dots.css" />
+    <Content Include="Content\SmartWizard\src\js\jquery.smartWizard.js" />
+    <Content Include="Content\SmartWizard\test\test-template.html" />
+    <Content Include="Content\SmartWizard\test\test.js" />
     <Content Include="GestionComandas.aspx" />
+    <Content Include="GestionMesas.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="MantenimientoMesas.aspx" />
     <Content Include="MantenimientoProductos.aspx" />
@@ -93,6 +119,16 @@
     <Content Include="RST.Master" />
     <Content Include="Scripts\js\jquery-3.0.0.slim.min.map" />
     <Content Include="Scripts\js\jquery-3.0.0.min.map" />
+    <Content Include="Content\SmartWizard\.gitignore" />
+    <Content Include="Content\SmartWizard\.npmignore" />
+    <Content Include="Content\SmartWizard\.travis.yml" />
+    <Content Include="Content\SmartWizard\bower.json" />
+    <Content Include="Content\SmartWizard\composer.json" />
+    <Content Include="Content\SmartWizard\CONTRIBUTING.md" />
+    <Content Include="Content\SmartWizard\examples\ajaxtest.php" />
+    <Content Include="Content\SmartWizard\LICENSE" />
+    <Content Include="Content\SmartWizard\package.json" />
+    <Content Include="Content\SmartWizard\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -162,6 +198,13 @@
     </Compile>
     <Compile Include="GestionComandas.aspx.designer.cs">
       <DependentUpon>GestionComandas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionMesas.aspx.cs">
+      <DependentUpon>GestionMesas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionMesas.aspx.designer.cs">
+      <DependentUpon>GestionMesas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

@@ -54,22 +54,31 @@ namespace Logica
 
         public static List<ProductoE> ObtenerTodos()
         {
-            List<ProductoE> lista = new List<ProductoE>();
-            DataSet ds = ProductoD.SeleccionarTodos();
-
-            foreach (DataRow fila in ds.Tables[0].Rows)
+            try
             {
-                ProductoE producto = new ProductoE();
-                producto.ID = Convert.ToInt16(fila["ID"]);
-                producto.NOMBRE = fila["NOMBRE"].ToString();
-                producto.DESCRIPCION = fila["DESCRIPCION"].ToString();
-                producto.PRECIO = Convert.ToInt16(fila["PRECIO"]);
-                producto.CATEGORIA = fila["CATEGORIA"].ToString();
-                producto.ESTADO = Convert.ToInt16(fila["ESTADO"]);
+                List<ProductoE> lista = new List<ProductoE>();
+                DataSet ds = ProductoD.SeleccionarTodos();
 
-                lista.Add(producto);
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    ProductoE producto = new ProductoE();
+                    producto.ID = Convert.ToInt16(fila["ID"]);
+                    producto.NOMBRE = fila["NOMBRE"].ToString();
+                    producto.DESCRIPCION = fila["DESCRIPCION"].ToString();
+                    producto.PRECIO = Convert.ToInt16(fila["PRECIO"]);
+                    producto.CATEGORIA = fila["CATEGORIA"].ToString();
+                    producto.ESTADO = Convert.ToInt16(fila["ESTADO"]);
+
+                    lista.Add(producto);
+                }
+                return lista;
             }
-            return lista;
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+
+            
         }
 
         public static void Modificar(ProductoE producto)
@@ -84,5 +93,35 @@ namespace Logica
             }
 
         }
+
+
+        public ProductoE ObtenerProductoPorID(int prod)
+        {
+            try
+            {
+                DataSet ds = ProductoD.SeleccionarProductoPorID(prod);
+                ProductoE producto = new ProductoE();
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    
+                    producto.ID = Convert.ToInt16(fila["ID"]);
+                    producto.NOMBRE = fila["NOMBRE"].ToString();
+                    producto.DESCRIPCION = fila["DESCRIPCION"].ToString();
+                    producto.PRECIO = Convert.ToInt16(fila["PRECIO"]);
+                    producto.CATEGORIA = fila["CATEGORIA"].ToString();
+                    producto.ESTADO = Convert.ToInt16(fila["ESTADO"]);
+                    
+                }
+                return producto;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+
+        }
+
+
+
     }
 }

@@ -44,7 +44,9 @@
     <Compile Include="Database.cs" />
     <Compile Include="DatabaseFactory.cs" />
     <Compile Include="Datos\ComandaD.cs" />
+    <Compile Include="Datos\DetalleComandaD.cs" />
     <Compile Include="Datos\MesaD.cs" />
+    <Compile Include="Datos\ParametrosD.cs" />
     <Compile Include="Datos\ProductoD.cs" />
     <Compile Include="Datos\UsuarioD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -32,6 +32,7 @@ namespace Restaurante
                         ventas2.Attributes.Add("style", "display:block");
                         ventas3.Attributes.Add("style", "display:block");
                         comandas.Attributes.Add("style", "display:block");
+                        mesas.Attributes.Add("style", "display:block");
 
                     }
                     //Si el perfil del Usuario es Mesero
@@ -40,6 +41,7 @@ namespace Restaurante
                         reportes.Attributes.Add("style", "display:block");
                         ventas3.Attributes.Add("style", "display:block");
                         comandas.Attributes.Add("style", "display:block");
+                        mesas.Attributes.Add("style", "display:block");
                     }
                     #endregion
                 }

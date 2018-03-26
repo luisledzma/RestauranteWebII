@@ -89,5 +89,27 @@ namespace Datos.Datos
 
         }
 
+
+
+        public static DataSet SeleccionarProductoPorID(int prod)
+        {
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase("Default");
+                SqlCommand comando = new SqlCommand("SP_PROD_SELECCIONAR_PRODUCTO_POR_ID");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@ID", prod);
+                DataSet ds = db.ExecuteReader(comando, "TBL_PRODUCTO");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+
+        }
+
+
+
     }
 }

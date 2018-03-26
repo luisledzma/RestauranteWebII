@@ -12,7 +12,7 @@
     <link href="Assets/css/estilos.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Condensed" rel="stylesheet" />
     <link href="Content/Bootstrap/bootstrap-grid.css" rel="stylesheet" />
-    
+    <link href="Content/SmartWizard/dist/css/smart_wizard.css" rel="stylesheet" />
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -48,6 +48,9 @@
                     </li>
                     <li class="nav-item" style="display:none;" runat="server" id="comandas">
                         <a class="nav-link" href="GestionComandas.aspx">Gestión de Comandas</a>
+                    </li>
+                    <li class="nav-item" style="display:none;" runat="server" id="mesas">
+                        <a class="nav-link" href="GestionMesas.aspx">Gestión de Mesas</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto offset">
@@ -105,7 +108,7 @@
                 <span class="text-warning">Copyrigth&copy;</span><asp:Label ID="Label1" runat="server" Text="All rights Reserved "></asp:Label>
             </div>
             <div class="row d-block mx-auto">
-                <asp:Label ID="Label2" runat="server" Text="Created by: Anthony, Joszef and Luis "></asp:Label>
+                <asp:Label ID="Label2" runat="server" Text="Created by: Anthony, Jozsef and Luis "></asp:Label>
             </div>
 
         </div>
@@ -118,6 +121,8 @@
     <script src="Scripts/js/bootstrap.js"></script>
     <script src="Assets/js/wow.js"></script>
     <script src="Assets/js/wow.min.js"></script>
+    <script src="Content/SmartWizard/dist/js/jquery.smartWizard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
 
     <!--use just the brands and solid styles-->
     <script src="https://use.fontawesome.com/releases/v5.0.6/js/brands.js"></script>
@@ -141,6 +146,13 @@
                 $(".modal").modal("hide");
             });
         });
+
+
+        $(document).ready(function () {
+            $('#smartwizard').smartWizard();
+        });
+
+
     </script>
 
 </body>

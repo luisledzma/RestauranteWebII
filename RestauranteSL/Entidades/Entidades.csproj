@@ -44,6 +44,7 @@
     <Compile Include="ComandaE.cs" />
     <Compile Include="DetalleComandaE.cs" />
     <Compile Include="MesaE.cs" />
+    <Compile Include="ParametrosE.cs" />
     <Compile Include="ProductoE.cs" />
     <Compile Include="UsuarioE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
