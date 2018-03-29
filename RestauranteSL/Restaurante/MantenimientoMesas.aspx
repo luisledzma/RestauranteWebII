@@ -94,6 +94,7 @@
                                             OnRowCancelingEdit="grvListado_RowCancelingEdit"
                                             OnRowDataBound="grvListado_RowDataBound"
                                             OnRowUpdating="grvListado_RowUpdating">
+                                            
 
 
                                             <Columns>
@@ -103,7 +104,7 @@
                                                         <asp:Label ID="lblDescEdit" runat="server" Text='<%# Eval("DESCRIPCION") %>'></asp:Label>
                                                     </ItemTemplate>
                                                     <EditItemTemplate>
-                                                        <asp:TextBox CssClass="form-control" ID="txtDescEdit" runat="server"></asp:TextBox>
+                                                        <asp:TextBox CssClass="form-control" ID="txtDescEdit" runat="server" Text='<%# Eval("DESCRIPCION") %>'></asp:TextBox>
                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator20" runat="server" ForeColor="Red" ControlToValidate="txtDescEdit" ErrorMessage="La Descripción es requerida"></asp:RequiredFieldValidator>
                                                     </EditItemTemplate>
                                                 </asp:TemplateField>
@@ -125,7 +126,7 @@
                                                         <asp:Label ID="lblCondEdit" runat="server" Text='<%# Eval("CONDICION") %>'></asp:Label>
                                                     </ItemTemplate>
                                                     <EditItemTemplate>
-                                                        <asp:TextBox CssClass="form-control" ID="txtCondEdit" runat="server"></asp:TextBox>
+                                                        <asp:TextBox CssClass="form-control" ID="txtCondEdit" runat="server" Text='<%# Eval("CONDICION") %>'></asp:TextBox>
                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator21" runat="server" ForeColor="Red" ControlToValidate="txtCondEdit" ErrorMessage="La Condición es requerida"></asp:RequiredFieldValidator>
                                                     </EditItemTemplate>
                                                 </asp:TemplateField>

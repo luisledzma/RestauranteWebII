@@ -62,5 +62,30 @@ namespace Logica
             }
             
         }
+
+        public static void ModificarCondicion(string id,string condicion)
+        {
+            try
+            {
+                MesaD.ModificarCondicion(id, condicion);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+        }
+
+        public static void ModificarEstado(MesaE mesa)
+        {
+            try
+            {
+                MesaD.ModificarEstado(mesa);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+
+        }
     }
 }

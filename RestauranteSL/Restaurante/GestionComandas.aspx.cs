@@ -20,10 +20,12 @@ namespace Restaurante
                 if (!IsPostBack)
                 {
                     llenarComboMesas();
+                    llenarComboProducto();
+                    
                 }
                 infoMesas();
                 buscarMesero();
-                llenarComboProducto();
+                
             }
             catch (Exception)
             {
@@ -115,8 +117,8 @@ namespace Restaurante
         {
             try
             {
-                gvOrden.DataSource = lstDet;
-                gvOrden.DataBind();
+                    gvOrden.DataSource = lstDet;
+                    gvOrden.DataBind();
             }
             catch (Exception)
             {
@@ -179,14 +181,24 @@ namespace Restaurante
         {
             try
             {
-                int producto = Convert.ToInt32(ddlProducto.SelectedValue);
-                int cantidad = Convert.ToInt32(txtCantidad.Text);
-                DetalleComandaE det = new DetalleComandaE();
-                det.IDPRODUCTO = producto;
-                det.CANTIDAD = cantidad;
+                
+                string idMesa = ddlMesas.SelectedValue;
 
-                lstDet.Add(det);
-                cargarGrid();
+                    string nombreProducto = ddlProducto.SelectedItem.Text;
+                    int producto = Convert.ToInt32(ddlProducto.SelectedValue);
+                    int cantidad = Convert.ToInt32(txtCantidad.Text);
+                    DetalleComandaE det = new DetalleComandaE();
+
+                    det.IDPRODUCTO = producto;
+                    det.NOMBREPRODUCTO = nombreProducto;
+                    det.CANTIDAD = cantidad;
+
+                    lstDet.Add(det);
+                    MesaL.ModificarCondicion(idMesa, "Ocupada");
+
+                    cargarGrid();
+                
+
             }
             catch (Exception ex)
             {
@@ -221,6 +233,7 @@ namespace Restaurante
                 {
                     dCom.IDCOMANDA = consec;
                     ProductoE prod = new ProductoL().ObtenerProductoPorID(dCom.IDPRODUCTO);
+                    dCom.NOMBREPRODUCTO = prod.NOMBRE;
                     dCom.NOTAS = txtNotas.Text;
                     dCom.SUBTOTAL = prod.PRECIO * dCom.CANTIDAD;
 
@@ -258,6 +271,41 @@ namespace Restaurante
             {
                 gvOrden.EditIndex = -1;
                 cargarGrid();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        protected void gvOrden_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            lstDet.Remove(new DetalleComandaE() { IDPRODUCTO = 1 });
+
+            gvOrden.EditIndex = -1;
+            cargarGrid();
+        }
+
+        protected void gvOrden_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+
+        }
+
+        protected void gvOrden_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            try
+            {
+                if (e.Row.RowType == DataControlRowType.DataRow) //Verificando es que sea una fila de datos
+                {
+                    //Buscar los controles
+                    TextBox txtCantEdit = (e.Row.FindControl("txtCantEdit") as TextBox);
+
+                    if ((e.Row.RowState & DataControlRowState.Edit) > 0) //Estamos en estado de edición
+                    {
+
+                    }
+                }
             }
             catch (Exception)
             {

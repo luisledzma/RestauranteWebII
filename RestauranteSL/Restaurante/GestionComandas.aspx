@@ -6,6 +6,8 @@
     <link href="Content/SmartWizard/dist/css/smart_wizard_theme_arrows.css" rel="stylesheet" />
     <link href="Content/SmartWizard/dist/css/smart_wizard_theme_circles.css" rel="stylesheet" />
     <link href="Content/SmartWizard/dist/css/smart_wizard_theme_dots.css" rel="stylesheet" />
+
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -42,7 +44,6 @@
                                     <div class="col-lg-4 ">
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ForeColor="Red" ValidationGroup="FormRegistro" ControlToValidate="txtMesero" ErrorMessage="Debe ingresar el mesero que atiende"></asp:RequiredFieldValidator>
                                     </div>
-
                                 </div>
 
                                 <div class="row">
@@ -138,6 +139,11 @@
                                             <asp:Button ID="btnAgregar" runat="server" OnClick="btnAgregar_Click" ValidationGroup="FormRegistro" Text="Agregar" CssClass="btn btn-secondary btn-lg" />
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="form-group col-lg-1 offset-lg-1">
+                                            <asp:Label ID="lblErrorCliente" runat="server" ForeColor="Red" Text="cd"></asp:Label>
+                                        </div>
+                                    </div>
 
                                 </div>
 
@@ -151,11 +157,16 @@
                                                     DataKeyNames="IDPRODUCTO"
                                                     AutoGenerateEditButton="false"
                                                     OnRowEditing="gvOrden_RowEditing"
-                                                    OnRowCancelingEdit="gvOrden_RowCancelingEdit">
+                                                    OnRowCancelingEdit="gvOrden_RowCancelingEdit"
+                                                    OnRowDeleting="gvOrden_RowDeleting"
+                                                    OnRowUpdating="gvOrden_RowUpdating"
+                                                    OnRowDataBound="gvOrden_RowDataBound"
+                                                    >
 
 
                                                     <Columns>
                                                         <asp:BoundField DataField="IDPRODUCTO" HeaderText="Producto" ReadOnly="True"></asp:BoundField>
+                                                        <asp:BoundField DataField="NOMBREPRODUCTO" HeaderText="Producto" ReadOnly="True"></asp:BoundField>
                                                         <asp:TemplateField HeaderText="CANTIDAD">
                                                             <ItemTemplate>
                                                                 <asp:Label ID="lblCantidad" runat="server" Text='<%# Eval("CANTIDAD") %>'></asp:Label>
@@ -167,8 +178,8 @@
                                                         </asp:TemplateField>
 
 
-                                                        <asp:CommandField ShowEditButton="true" EditText="Editar" ControlStyle-CssClass="btn btn-secondary" />
-                                                        <asp:CommandField ShowDeleteButton="true" DeleteText="Quitar" ControlStyle-CssClass="btn btn-secondary" />
+                                                        <asp:CommandField ShowEditButton="true" EditText="Editar" ControlStyle-CssClass="btn btn-secondary"/>
+                                                        <asp:CommandField ShowDeleteButton="true" DeleteText="Quitar" ControlStyle-CssClass="btn btn-secondary"/>
                                                     </Columns>
 
                                                 </asp:GridView>
@@ -184,10 +195,11 @@
 
                                 <div class="row">
                                     <div class="col-lg-6 text-right">
-                                        <h5><asp:Label ID="Label5" runat="server" Text="Notas relacionadas con los productos de la orden."></asp:Label></h5>
+                                        <h5>
+                                            <asp:Label ID="Label5" runat="server" Text="Notas relacionadas con los productos de la orden."></asp:Label></h5>
                                     </div>
                                 </div>
-                                <div class="row" style="padding-top:20px;">
+                                <div class="row" style="padding-top: 20px;">
                                     <div class="col-lg-2 text-right">
                                         <asp:Label ID="Label3" runat="server" Text="Notas: "></asp:Label>
                                     </div>
@@ -203,10 +215,11 @@
                             <div class="col-lg-12" style="padding-top: 50px;">
                                 <div class="row">
                                     <div class="col-lg-6 text-right">
-                                        <h5><asp:Label ID="Label7" runat="server" Text="Formalice la orden para finalizar."></asp:Label></h5>
+                                        <h5>
+                                            <asp:Label ID="Label7" runat="server" Text="Formalice la orden para finalizar."></asp:Label></h5>
                                     </div>
                                 </div>
-                                <div class="row" style="padding-top:20px;">
+                                <div class="row" style="padding-top: 20px;">
                                     <div class="form-group col-lg-1 offset-lg-4">
                                         <asp:Button ID="btnFormalizar" runat="server" OnClick="btnFormalizar_Click" Text="Formalizar" CssClass="btn btn-secondary btn-lg" />
                                     </div>
@@ -298,6 +311,22 @@
                 }
             });
 
+
+            $('#next-btn').submit(function (e) {
+                e.preventDefault();
+            }).validate({
+                debug: false,
+                rules: {
+                    '#txtNombreCliente': {
+                        required:true
+                    }
+                },
+                messages: {
+                    '#txtNombreCliente': {
+                        required:"Introduzca el nombre del cliente"
+                    }
+                }
+            })
 
         });
     </script>

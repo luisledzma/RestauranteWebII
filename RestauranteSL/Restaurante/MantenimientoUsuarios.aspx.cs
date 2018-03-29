@@ -134,7 +134,7 @@ namespace Restaurante
                 UsuarioE user = new UsuarioE();
                 //BoundField 
                 //comp.idCompra = Convert.ToInt16(((TextBox)grvListado.Rows[e.RowIndex].Cells[1].Controls[0]).Text);
-                user.IDENTIFICACION = grvListado.Rows[e.RowIndex].Cells[1].Text;
+                user.IDENTIFICACION = grvListado.Rows[e.RowIndex].Cells[0].Text;
                 //TemplateField
                 user.ESTADO = Convert.ToInt16(((DropDownList)grvListado.Rows[e.RowIndex].FindControl("ddlEstadoEdit")).SelectedValue);
 

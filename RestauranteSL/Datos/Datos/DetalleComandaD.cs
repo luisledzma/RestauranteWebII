@@ -22,6 +22,7 @@ namespace Datos.Datos
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@IDCOMANDA", det.IDCOMANDA);
                 comando.Parameters.AddWithValue("@IDPRODUCTO", det.IDPRODUCTO);
+                comando.Parameters.AddWithValue("@NOMBREPRODUCTO", det.NOMBREPRODUCTO);
                 comando.Parameters.AddWithValue("@CANTIDAD", det.CANTIDAD);
                 comando.Parameters.AddWithValue("@NOTAS", det.NOTAS);
                 comando.Parameters.AddWithValue("@SUBTOTAL", det.SUBTOTAL);

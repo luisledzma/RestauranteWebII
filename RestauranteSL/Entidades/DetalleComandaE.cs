@@ -12,6 +12,8 @@ namespace Entidades
 
         public int IDPRODUCTO { get; set; }
 
+        public string NOMBREPRODUCTO { get; set; }
+
         public int CANTIDAD { get; set; }
 
         public string NOTAS { get; set; }

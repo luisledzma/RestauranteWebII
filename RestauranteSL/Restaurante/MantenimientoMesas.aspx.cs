@@ -129,7 +129,7 @@ namespace Restaurante
                 MesaE mesa = new MesaE();
                 //BoundField 
                 //comp.idCompra = Convert.ToInt16(((TextBox)grvListado.Rows[e.RowIndex].Cells[1].Controls[0]).Text);
-                mesa.ID = grvListado.Rows[e.RowIndex].Cells[1].Text;
+                mesa.ID = grvListado.Rows[e.RowIndex].Cells[0].Text;
                 //TemplateField
                 mesa.DESCRIPCION = ((TextBox)grvListado.Rows[e.RowIndex].FindControl("txtDescEdit")).Text;
                 mesa.ESTADO = Convert.ToInt16(((DropDownList)grvListado.Rows[e.RowIndex].FindControl("ddlEstadoEdit")).SelectedValue);

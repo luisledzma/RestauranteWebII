@@ -68,7 +68,43 @@ namespace Datos.Datos
             {
                 throw new ApplicationException(ex.Message);
             }
-            
+        }
+
+        public static void ModificarCondicion(string id,string condicion)
+        {
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase("Default");
+                SqlCommand comando = new SqlCommand("SP_SEG_MODIFICAR_COND_MESA");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@ID", id);
+                comando.Parameters.AddWithValue("@CONDICION", condicion);
+
+                db.ExecuteNonQuery(comando);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+        }
+
+        public static void ModificarEstado(MesaE mesa)
+        {
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase("Default");
+                SqlCommand comando = new SqlCommand("SP_SEG_MODIFICAR_ESTADO_MESA");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@ID", mesa.ID);
+                comando.Parameters.AddWithValue("@ESTADO", mesa.ESTADO);
+
+                db.ExecuteNonQuery(comando);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+
         }
     }
 }
