@@ -35,5 +35,26 @@ namespace Datos.Datos
 
         }
 
+
+        public DataSet SeleccionarDetalleComanda(string comanda)
+        {
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase("Default");
+                SqlCommand comando = new SqlCommand("SP_SELECCIONAR_DETALLE_COMANDA");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@P_COMANDA", comanda);
+                DataSet ds = db.ExecuteReader(comando, "TBL_DETALLE_COMANDA");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+
+        }
+
+
+
     }
 }

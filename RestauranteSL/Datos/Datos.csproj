@@ -45,6 +45,8 @@
     <Compile Include="DatabaseFactory.cs" />
     <Compile Include="Datos\ComandaD.cs" />
     <Compile Include="Datos\DetalleComandaD.cs" />
+    <Compile Include="Datos\FacturaD.cs" />
+    <Compile Include="Datos\FacturaLineaD.cs" />
     <Compile Include="Datos\MesaD.cs" />
     <Compile Include="Datos\ParametrosD.cs" />
     <Compile Include="Datos\ProductoD.cs" />

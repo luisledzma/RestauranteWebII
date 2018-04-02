@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="ComandaE.cs" />
     <Compile Include="DetalleComandaE.cs" />
+    <Compile Include="FacturaE.cs" />
+    <Compile Include="FacturaLineaE.cs" />
     <Compile Include="MesaE.cs" />
     <Compile Include="ParametrosE.cs" />
     <Compile Include="ProductoE.cs" />

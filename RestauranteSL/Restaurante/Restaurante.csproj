@@ -115,6 +115,7 @@
     <Content Include="MantenimientoProductos.aspx" />
     <Content Include="MantenimientoUsuarios.aspx" />
     <Content Include="packages.config" />
+    <Content Include="Pago.aspx" />
     <Content Include="Principal.aspx" />
     <Content Include="RST.Master" />
     <Content Include="Scripts\js\jquery-3.0.0.slim.min.map" />
@@ -233,6 +234,13 @@
     </Compile>
     <Compile Include="MantenimientoUsuarios.aspx.designer.cs">
       <DependentUpon>MantenimientoUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pago.aspx.cs">
+      <DependentUpon>Pago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pago.aspx.designer.cs">
+      <DependentUpon>Pago.aspx</DependentUpon>
     </Compile>
     <Compile Include="Principal.aspx.cs">
       <DependentUpon>Principal.aspx</DependentUpon>

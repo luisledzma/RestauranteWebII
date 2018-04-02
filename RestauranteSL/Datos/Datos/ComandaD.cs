@@ -35,5 +35,47 @@ namespace Datos.Datos
 
         }
 
+
+
+        public DataSet SeleccionarComandaPorMesa(string mesa)
+        {
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase("Default");
+                SqlCommand comando = new SqlCommand("SP_SELECCIONAR_COMANDA_POR_MESA");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@P_MESA", mesa);
+                DataSet ds = db.ExecuteReader(comando, "TBL_COMANDA");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+
+        }
+
+
+        public void ActualizarEstadoComanda(ComandaE com)
+        {
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase("Default");
+
+                SqlCommand comando = new SqlCommand("SP_SEG_ACTUALIZAR_ESTADO_COMANDA");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@ID", com.ID);
+                comando.Parameters.AddWithValue("@ESTADO", com.ESTADO);
+                db.ExecuteNonQuery(comando);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+
+        }
+
+
+
     }
 }

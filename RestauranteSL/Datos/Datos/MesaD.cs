@@ -38,7 +38,7 @@ namespace Datos.Datos
             try
             {
                 Database db = DatabaseFactory.CreateDatabase("Default");
-                SqlCommand comando = new SqlCommand("SP_SELECCIONAR_TODAS_MESAS ");
+                SqlCommand comando = new SqlCommand("SP_SELECCIONAR_TODAS_MESAS");
                 comando.CommandType = CommandType.StoredProcedure;
                 DataSet ds = db.ExecuteReader(comando, "TBL_MESA");
                 return ds;

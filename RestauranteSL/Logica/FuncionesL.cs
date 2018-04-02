@@ -10,8 +10,21 @@ namespace Logica
 {
     public class FuncionesL
     {
+        
+        public bool validarTarjeta(string numTarjeta)
+        {
+            if (string.IsNullOrEmpty(numTarjeta))
+            {
+                return false;
+            }
+            
+            int sumaDeDigitos = numTarjeta.Where((e) => e >= '0' && e <= '9').Reverse()
+                .Select((e, i) => ((int)e - 48) * (i % 2 == 0 ? 1 : 2))
+                .Sum((e) => e / 10 + e % 10);
 
+            return sumaDeDigitos % 10 == 0;
 
+        }
 
         //#region Encriptar
 
@@ -24,7 +37,7 @@ namespace Logica
 
         //}
 
-       
+
 
         //private string Encriptar(string textoQueEncriptaremos,string passBase, string saltValue, string hashAlgorithm,int passwordIterations, string initVector, int keySize)
 

@@ -98,14 +98,14 @@ namespace Restaurante
             {
                 string idMesa = ddlMesas.SelectedValue;
 
-                if (idMesa != "" || idMesa != null)
+                if (idMesa != "" )
                 {
                     List<MesaE> listado = MesaL.ObtenerTodos();
                     MesaE mesa = (listado.Find(elemento => elemento.ID == idMesa));
                     lblDesc.Text = mesa.DESCRIPCION;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;
@@ -194,8 +194,6 @@ namespace Restaurante
                     det.CANTIDAD = cantidad;
 
                     lstDet.Add(det);
-                    MesaL.ModificarCondicion(idMesa, "Ocupada");
-
                     cargarGrid();
                 
 
@@ -211,6 +209,39 @@ namespace Restaurante
         {
             try
             {
+                if (txtNombreCliente.Text == "")
+                {
+                    idErrores.Attributes.Add("style", "display:block;");
+                    lblNombreCliente.Text = "Debe digitar el nombre del cliente.";
+                    return;
+                }
+                else
+                {
+                    lblNombreCliente.Text = "";
+                }
+
+                if(ddlMesas.SelectedValue == "")
+                {
+                    idErrores.Attributes.Add("style", "display:block;");
+                    lblMesa.Text = "Debe seleccionar la mesa.";
+                    return;
+                }
+                else
+                {
+                    lblMesa.Text = "";
+                }
+
+                if (lstDet.Count == 0)
+                {
+                    idErrores.Attributes.Add("style", "display:block;");
+                    lblLista.Text = "Debe agregar productos a la comanda.";
+                    return;
+                }
+                else
+                {
+                    lblLista.Text = "";
+                }
+
                 ParametrosE p = new ParametrosL().SeleccionarConsecutivo("COMANDA");
                 string consec = new ParametrosL().CalcularConsecutivo(p);
                 ParametrosE pr = new ParametrosE();
@@ -239,6 +270,8 @@ namespace Restaurante
 
                     new DetalleComandaL().Insertar(dCom);
                 }
+
+                MesaL.ModificarCondicion(com.IDMESA, "Comanda Registrada");
 
                 lstDet.Clear();
                 Response.Redirect("Principal.aspx");
@@ -281,15 +314,32 @@ namespace Restaurante
 
         protected void gvOrden_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            lstDet.Remove(new DetalleComandaE() { IDPRODUCTO = 1 });
+            try
+            {
+                lstDet.Remove(new DetalleComandaE() { IDPRODUCTO = 1 });
 
-            gvOrden.EditIndex = -1;
-            cargarGrid();
+                gvOrden.EditIndex = -1;
+                cargarGrid();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
         protected void gvOrden_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            try
+            {
 
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         protected void gvOrden_RowDataBound(object sender, GridViewRowEventArgs e)

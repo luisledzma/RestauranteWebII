@@ -10,124 +10,133 @@
 namespace Restaurante {
     
     
-    public partial class MantenimientoMesas {
+    public partial class Pago {
         
         /// <summary>
-        /// Control RequiredFieldValidator2.
+        /// Control txtSubtotal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.TextBox txtSubtotal;
         
         /// <summary>
-        /// Control lblId.
+        /// Control txtIV.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblId;
+        protected global::System.Web.UI.WebControls.TextBox txtIV;
         
         /// <summary>
-        /// Control txtId.
+        /// Control txtServicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtId;
+        protected global::System.Web.UI.WebControls.TextBox txtServicio;
         
         /// <summary>
-        /// Control RequiredFieldValidator3.
+        /// Control txtTotal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.TextBox txtTotal;
         
         /// <summary>
-        /// Control Label2.
+        /// Control UpdatePanel3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel3;
         
         /// <summary>
-        /// Control txtDesc.
+        /// Control UpdateProgresUpdatePanel1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDesc;
+        protected global::System.Web.UI.UpdateProgress UpdateProgresUpdatePanel1;
         
         /// <summary>
-        /// Control Label10.
+        /// Control ddlTarjeta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label10;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTarjeta;
         
         /// <summary>
-        /// Control ddlEstado.
+        /// Control txtNumTarjeta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEstado;
+        protected global::System.Web.UI.WebControls.TextBox txtNumTarjeta;
         
         /// <summary>
-        /// Control RequiredFieldValidator5.
+        /// Control ddlMesVencimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMesVencimiento;
         
         /// <summary>
-        /// Control Label7.
+        /// Control ddlAnnoVencimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAnnoVencimiento;
         
         /// <summary>
-        /// Control txtCond.
+        /// Control txtCVC.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCond;
+        protected global::System.Web.UI.WebControls.TextBox txtCVC;
         
         /// <summary>
-        /// Control btnRegistrar.
+        /// Control btnCancelarEl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegistrar;
+        protected global::System.Web.UI.WebControls.Button btnCancelarEl;
         
         /// <summary>
-        /// Control UpdatePanel1.
+        /// Control btnAceptarEl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.Button btnAceptarEl;
+        
+        /// <summary>
+        /// Control UpdatePanel2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
         
         /// <summary>
         /// Control UpdateProgress1.
@@ -139,12 +148,57 @@ namespace Restaurante {
         protected global::System.Web.UI.UpdateProgress UpdateProgress1;
         
         /// <summary>
-        /// Control grvListado.
+        /// Control txtPagaCon.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grvListado;
+        protected global::System.Web.UI.WebControls.TextBox txtPagaCon;
+        
+        /// <summary>
+        /// Control txtVuelto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtVuelto;
+        
+        /// <summary>
+        /// Control btnCancelarEf.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelarEf;
+        
+        /// <summary>
+        /// Control btnAceptarEf.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAceptarEf;
+        
+        /// <summary>
+        /// Control UpdatePanel1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
+        /// Control lblMsjError.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMsjError;
     }
 }

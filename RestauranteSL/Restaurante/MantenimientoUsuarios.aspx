@@ -23,6 +23,15 @@
                             <div class="form-group row">
                                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                     <ContentTemplate>
+                                        <asp:UpdateProgress AssociatedUpdatePanelID="UpdatePanel1" ID="UpdateProgress1" runat="server" DynamicLayout="true">
+                                            <ProgressTemplate>
+                                                <div class="loading-panel">
+                                                    <div class="loading-container">
+                                                        <img class="mx-auto d-block" src="Assets/img/loading.svg" style="width: 150px; height: 150px; display: block; position: absolute; z-index: 2001; left: 40%; top: 45%;" />
+                                                    </div>
+                                                </div>
+                                            </ProgressTemplate>
+                                        </asp:UpdateProgress>
                                         <asp:GridView ID="grvListado" runat="server" CssClass="table table-bordered table-hover"
                                             AutoGenerateColumns="false"
                                             DataKeyNames="IDENTIFICACION"

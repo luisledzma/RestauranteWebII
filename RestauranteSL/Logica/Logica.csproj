@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="ComandaL.cs" />
     <Compile Include="DetalleComandaL.cs" />
+    <Compile Include="FacturaL.cs" />
+    <Compile Include="FacturaLineaL.cs" />
     <Compile Include="FuncionesL.cs" />
     <Compile Include="MesaL.cs" />
     <Compile Include="ParametrosL.cs" />
