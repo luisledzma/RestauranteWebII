@@ -76,6 +76,8 @@
     <Content Include="Assets\img\food.png" />
     <Content Include="Assets\img\loading.svg" />
     <Content Include="Assets\img\logo.png" />
+    <Content Include="Assets\img\logoRest.png" />
+    <Content Include="Assets\img\logoRestaurante.png" />
     <Content Include="Assets\img\mesa.png" />
     <Content Include="Assets\img\mesero.png" />
     <Content Include="Assets\img\reporte.png" />
@@ -117,6 +119,9 @@
     <Content Include="packages.config" />
     <Content Include="Pago.aspx" />
     <Content Include="Principal.aspx" />
+    <Content Include="ReporteFecha.aspx" />
+    <Content Include="ReporteMedioPago.aspx" />
+    <Content Include="ReporteVarios.aspx" />
     <Content Include="RST.Master" />
     <Content Include="Scripts\js\jquery-3.0.0.slim.min.map" />
     <Content Include="Scripts\js\jquery-3.0.0.min.map" />
@@ -250,6 +255,27 @@
       <DependentUpon>Principal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReporteFecha.aspx.cs">
+      <DependentUpon>ReporteFecha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteFecha.aspx.designer.cs">
+      <DependentUpon>ReporteFecha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteMedioPago.aspx.cs">
+      <DependentUpon>ReporteMedioPago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteMedioPago.aspx.designer.cs">
+      <DependentUpon>ReporteMedioPago.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteVarios.aspx.cs">
+      <DependentUpon>ReporteVarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteVarios.aspx.designer.cs">
+      <DependentUpon>ReporteVarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RST.Master.cs">
       <DependentUpon>RST.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -22,11 +22,13 @@ namespace Restaurante
                 vent2.Attributes.Add("style", "display:normal");
                 vent3.Attributes.Add("style", "display:normal");
                 comand.Attributes.Add("style", "display:normal");
+                comand2.Attributes.Add("style", "display:normal");
             }
             if ((Session["Login"] as UsuarioE).FK_PERFIL == 0)
             {
                 vent3.Attributes.Add("style", "display:normal");
                 comand.Attributes.Add("style", "display:normal");
+                comand2.Attributes.Add("style", "display:normal");
             }
         }
     }

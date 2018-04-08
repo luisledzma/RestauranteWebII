@@ -46,9 +46,9 @@
                         <a class="nav-link dropdown-toggle" href="#" runat="server" id="reportes" style="display:none;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reportes
                         </a>
                         <div class="dropdown-menu" aria-labelledby="reportes">
-                            <a id="ventas1" runat="server" style="display:none;" class="dropdown-item" href="#">Ventas por rango de fechas</a>
-                            <a id="ventas2" runat="server" style="display:none;" class="dropdown-item" href="#">Ventas por medio de pago</a>
-                            <a id="ventas3" runat="server" style="display:none;" class="dropdown-item" href="#">Ventas por mesa, mesero o producto</a>
+                            <a id="ventas1" runat="server" style="display:none;" class="dropdown-item" href="ReporteFecha.aspx">Ventas por rango de fechas</a>
+                            <a id="ventas2" runat="server" style="display:none;" class="dropdown-item" href="ReporteMedioPago.aspx">Ventas por medio de pago</a>
+                            <a id="ventas3" runat="server" style="display:none;" class="dropdown-item" href="ReporteVarios.aspx">Ventas por mesa, mesero o producto</a>
                         </div>
                     </li>
                     <li class="nav-item" style="display:none;" runat="server" id="comandas">

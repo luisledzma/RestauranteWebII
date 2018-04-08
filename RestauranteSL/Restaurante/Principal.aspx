@@ -36,25 +36,25 @@
                 <div class="card col-md-4 col-lg-4 wow fadeIn" style="display:none;" runat="server" id="vent1"  data-wow-duration="1000ms" data-wow-delay="400ms">
                     <img class="card-img-top" src="Assets/img/reporte.png" />
                     <div class="card-body">
-                        <h5 class="card-title">Reporte</h5>
+                        <h5 class="card-title">Reporte por Fecha</h5>
                         <p class="card-text">Muestra el reporte de las ventas por rango de fechas.</p>
-                        <a href="#" class="btn btn-primary">Presione Aquí</a>
+                        <a href="ReporteFecha.aspx" class="btn btn-primary">Presione Aquí</a>
                     </div>
                 </div>
                 <div class="card col-md-4 col-lg-4 wow fadeIn" style="display:none;" runat="server" id="vent2"  data-wow-duration="1000ms" data-wow-delay="400ms">
                     <img class="card-img-top" src="Assets/img/reporte.png" />
                     <div class="card-body">
-                        <h5 class="card-title">Reporte</h5>
+                        <h5 class="card-title">Reporte por Medio de Pago</h5>
                         <p class="card-text">Muestra el reporte de ventas por medio de pago.</p>
-                        <a href="#" class="btn btn-primary">Presione Aquí</a>
+                        <a href="ReporteMedioPago.aspx" class="btn btn-primary">Presione Aquí</a>
                     </div>
                 </div>
                 <div class="card col-md-4 col-lg-4 wow fadeIn" style="display:none;" runat="server" id="vent3"  data-wow-duration="1000ms" data-wow-delay="400ms">
                     <img class="card-img-top" src="Assets/img/reporte.png" />
                     <div class="card-body">
-                        <h5 class="card-title">Reporte</h5>
+                        <h5 class="card-title">Reporte por Mesa-Mesero-Producto</h5>
                         <p class="card-text">Muestra el reporte de ventas por mesa, mesero o producto.</p>
-                        <a href="#" class="btn btn-primary">Presione Aquí</a>
+                        <a href="ReporteVarios.aspx" class="btn btn-primary">Presione Aquí</a>
                     </div>
                 </div>
 
@@ -67,6 +67,14 @@
                     </div>
                 </div>
 
+                <div style="display:none;" runat="server" id="comand2" class="card col-md-4 col-lg-4 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">
+                    <img class="card-img-top" src="Assets/img/factura.png" />
+                    <div class="card-body">
+                        <h5 class="card-title">Gestión de Mesas</h5>
+                        <p class="card-text">Muestra la ventana para la gestión de las mesas.</p>
+                        <a href="GestionMesas.aspx" class="btn btn-primary">Presione Aquí</a>
+                    </div>
+                </div>
             </div>
 
 

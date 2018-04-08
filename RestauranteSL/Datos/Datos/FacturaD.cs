@@ -37,6 +37,59 @@ namespace Datos.Datos
 
         }
 
+        public static DataSet SeleccionarFacturaPorFechas(string fechaInicial, string fechaFinal)
+        {
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase("Default");
+                SqlCommand comando = new SqlCommand("SP_FAC_SELECCIONAR_POR_FECHAS");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@FECHAINICIAL", fechaInicial);
+                comando.Parameters.AddWithValue("@FECHAFINAL", fechaFinal);
+                DataSet ds = db.ExecuteReader(comando, "TBL_FACTURA");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
 
+        }
+
+        public static DataSet SeleccionarFacturaPorFecha(string fechaInicial)
+        {
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase("Default");
+                SqlCommand comando = new SqlCommand("SP_FAC_SELECCIONAR_POR_FECHA");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@FECHAINICIAL", fechaInicial);
+                DataSet ds = db.ExecuteReader(comando, "TBL_FACTURA");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+
+        }
+
+
+        public static DataSet SeleccionarTodas()
+        {
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase("Default");
+                SqlCommand comando = new SqlCommand("SP_FAC_SELECCIONAR_TODAS");
+                comando.CommandType = CommandType.StoredProcedure;
+                DataSet ds = db.ExecuteReader(comando, "TBL_FACTURA");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+
+        }
     }
 }

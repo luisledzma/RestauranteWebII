@@ -89,7 +89,7 @@ namespace Restaurante
                         IDMESERO = com.IDMESERO,
                         IDMESA = com.IDMESA,
                         IDCOMANDA = com.ID,
-                        FECHA = (DateTime.Today).ToString(),
+                        FECHA = (DateTime.Today).ToShortDateString(),
                         CLIENTE = com.NOMBRECLIENTE,
                         TIPOPAGO = "Electronico",
                         TOTAL = Convert.ToDecimal(txtTotal.Text)
@@ -192,7 +192,7 @@ namespace Restaurante
                         IDMESERO = com.IDMESERO,
                         IDMESA = com.IDMESA,
                         IDCOMANDA = com.ID,
-                        FECHA = (DateTime.Today).ToString(),
+                        FECHA = (DateTime.Today).ToShortDateString(),
                         CLIENTE = com.NOMBRECLIENTE,
                         TIPOPAGO = "Efectivo",
                         TOTAL = Convert.ToDecimal(txtTotal.Text)

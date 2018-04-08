@@ -103,6 +103,9 @@ namespace Restaurante
                     List<MesaE> listado = MesaL.ObtenerTodos();
                     MesaE mesa = (listado.Find(elemento => elemento.ID == idMesa));
                     lblDesc.Text = mesa.DESCRIPCION;
+                }else
+                {
+                    lblDesc.Text = "Todas las mesas se encuentran ocupadas";
                 }
             }
             catch (Exception ex)

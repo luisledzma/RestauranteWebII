@@ -38,6 +38,23 @@ namespace Datos.Datos
 
         }
 
+        public static DataSet SeleccionarTodos()
+        {
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase("Default");
+                SqlCommand comando = new SqlCommand("SP_FAC_SELECCIONAR_TODAS_FAC_LINEA");
+                comando.CommandType = CommandType.StoredProcedure;
+                DataSet ds = db.ExecuteReader(comando, "TBL_FACTURA_LINEA");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+
+        }
+
 
     }
 }

@@ -258,7 +258,7 @@
                             <div class="col-lg-12 col-md-12 col-xs-12 form-bg frmlogin" id="divLogin" runat="server" style="border-radius: 20px;">
                                 <div class="box">
                                     <div class="title">
-                                        <img class="mx-auto d-block img-fluid" src="Assets/img/logo.png" />
+                                        <img class="mx-auto d-block img-fluid" src="Assets/img/logoRestaurante.png" />
                                     </div>
                                     <div class="box-content">
                                         <div class="row">
