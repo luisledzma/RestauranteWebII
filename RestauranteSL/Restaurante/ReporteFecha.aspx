@@ -25,7 +25,7 @@
                                 <div class=" col-lg-8 form-group">
                                     <asp:TextBox ID="txtFechaInicial" runat="server" CssClass="form-control" TextMode="DateTime"></asp:TextBox>
                                     <ajaxToolkit:CalendarExtender runat="server"
-                                        BehaviorID="txtFechaInicial_CalendarExtender" TargetControlID="txtFechaInicial" ID="txtFechaInicial_CalendarExtender"></ajaxToolkit:CalendarExtender>
+                                        BehaviorID="txtFechaInicial_CalendarExtender" Format="dd/MM/yyyy" TargetControlID="txtFechaInicial" ID="txtFechaInicial_CalendarExtender"></ajaxToolkit:CalendarExtender>
 
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ForeColor="Red" ValidationGroup="FormBuscar" ControlToValidate="txtFechaInicial" ErrorMessage="Debe ingresar la fecha inicial"></asp:RequiredFieldValidator>
                                 </div>
@@ -37,7 +37,7 @@
                                 <div class=" col-lg-8 form-group">
                                     <asp:TextBox ID="txtFechaFinal" runat="server" CssClass="form-control" TextMode="DateTime"></asp:TextBox>
                                     <ajaxToolkit:CalendarExtender runat="server"
-                                        BehaviorID="txtFechaFinal_CalendarExtender" TargetControlID="txtFechaFinal" ID="txtFechaFinal_CalendarExtender"></ajaxToolkit:CalendarExtender>
+                                        BehaviorID="txtFechaFinal_CalendarExtender" Format="dd/MM/yyyy" TargetControlID="txtFechaFinal" ID="txtFechaFinal_CalendarExtender"></ajaxToolkit:CalendarExtender>
 
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ForeColor="Red" ValidationGroup="FormBuscar" ControlToValidate="txtFechaFinal" ErrorMessage="Debe ingresar la fecha final"></asp:RequiredFieldValidator>
 

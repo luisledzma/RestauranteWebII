@@ -56,5 +56,26 @@ namespace Datos.Datos
         }
 
 
+        public static DataSet SeleccionarFLporProdYFecha(string fechaIncial,string fechaFinal,string producto)
+        {
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase("Default");
+                SqlCommand comando = new SqlCommand("SP_FAC_SELECCIONAR_FAC_LINEA_POR_PROD_Y_FECHA");
+                comando.Parameters.AddWithValue("@FECHAINICIAL", fechaIncial);
+                comando.Parameters.AddWithValue("@FECHAFINAL", fechaFinal);
+                comando.Parameters.AddWithValue("@PRODUCTO", producto);
+                comando.CommandType = CommandType.StoredProcedure;
+                DataSet ds = db.ExecuteReader(comando, "TBL_FACTURA_LINEA");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+
+        }
+
+
     }
 }

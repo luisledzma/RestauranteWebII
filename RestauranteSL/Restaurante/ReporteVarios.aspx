@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/RST.Master" AutoEventWireup="true" CodeBehind="ReporteVarios.aspx.cs" Inherits="Restaurante.ReporteVarios" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -19,13 +21,34 @@
                     <div class="row" style="padding-top: 50px;">
 
                         <div class="col-lg-4 offset-lg-2">
+                            <div class="row">
+                                <div class="col-lg-4 text-right">
+                                    <asp:Label ID="Label3" runat="server" Text="Fecha Inicial: "></asp:Label>
+                                </div>
+                                <div class="col-lg-8 form-group">
+                                    <asp:TextBox ID="txtFechaInicialM" runat="server" CssClass="form-control" TextMode="DateTime"></asp:TextBox>
+                                    <ajaxToolkit:CalendarExtender TargetControlID="txtFechaInicialM" Format="dd/MM/yyyy" ID="CalendarExtender2" runat="server" />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ForeColor="Red" ValidationGroup="FormBuscar" ControlToValidate="txtFechaInicialM" ErrorMessage="Debe ingresar la fecha inicial"></asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 text-right">
+                                    <asp:Label ID="Label5" runat="server" Text="Fecha Final: "></asp:Label>
+                                </div>
+                                <div class=" col-lg-8 form-group">
+                                    <asp:TextBox ID="txtFechaFinalM" runat="server" CssClass="form-control" TextMode="DateTime"></asp:TextBox>
+                                    <ajaxToolkit:CalendarExtender TargetControlID="txtFechaFinalM" Format="dd/MM/yyyy" ID="CalendarExtender1" runat="server" />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ForeColor="Red" ValidationGroup="FormBuscar" ControlToValidate="txtFechaFinalM" ErrorMessage="Debe ingresar la fecha final"></asp:RequiredFieldValidator>
+                                </div>
+
+                            </div>
 
                             <div class="row">
                                 <div class="col-lg-4 text-right">
                                     <asp:Label ID="Label4" runat="server" Text="Mesas:"></asp:Label>
                                 </div>
                                 <div class=" col-lg-8 form-group">
-                                    <asp:DropDownList ID="ddlMesas" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlMesas_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddlMesas" runat="server" CssClass="form-control"></asp:DropDownList>
                                 </div>
                             </div>
 
@@ -44,6 +67,12 @@
                                                 </div>
                                             </ProgressTemplate>
                                         </asp:UpdateProgress>
+                                        <div class="row">
+                                            <div class="form-group col-lg-4 offset-lg-4">
+                                                <asp:Button ID="btnBuscarM" OnClick="btnBuscarM_Click" runat="server" Text="Buscar" ValidationGroup="FormBuscarM" CssClass="btn btn-secondary btn-lg" />
+                                            </div>
+                                        </div>
+
                                         <asp:GridView ID="grvListaMesas" runat="server" CssClass="table table-bordered table-hover"
                                             AutoGenerateColumns="false" DataKeyNames="ID">
                                             <Columns>
@@ -73,16 +102,40 @@
                     <div class="row" style="padding-top: 50px;">
                         <div class="col-lg-4 offset-lg-2">
 
+
+                            <div class="row">
+                                <div class="col-lg-4 text-right">
+                                    <asp:Label ID="Label6" runat="server" Text="Fecha Inicial: "></asp:Label>
+                                </div>
+                                <div class="col-lg-8 form-group">
+                                    <asp:TextBox ID="txtFechaInicialMr" runat="server" CssClass="form-control" TextMode="DateTime"></asp:TextBox>
+                                    <ajaxToolkit:CalendarExtender Format="dd/MM/yyyy" ID="CalendarExtender3" TargetControlID="txtFechaInicialMr" runat="server" />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ForeColor="Red" ValidationGroup="FormBuscar2" ControlToValidate="txtFechaInicialMr" ErrorMessage="Debe ingresar la fecha inicial"></asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 text-right">
+                                    <asp:Label ID="Label7" runat="server" Text="Fecha Final: "></asp:Label>
+                                </div>
+                                <div class=" col-lg-8 form-group">
+                                    <asp:TextBox ID="txtFechaFinalMr" runat="server" CssClass="form-control" TextMode="DateTime"></asp:TextBox>
+                                    <ajaxToolkit:CalendarExtender Format="dd/MM/yyyy" TargetControlID="txtFechaFinalMr" ID="CalendarExtender4" runat="server" />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ForeColor="Red" ValidationGroup="FormBuscar2" ControlToValidate="txtFechaFinalMr" ErrorMessage="Debe ingresar la fecha final"></asp:RequiredFieldValidator>
+                                </div>
+
+                            </div>
+
                             <div class="row">
                                 <div class="col-lg-4 text-right">
                                     <asp:Label ID="Label1" runat="server" Text="Meseros:"></asp:Label>
                                 </div>
                                 <div class=" col-lg-8 form-group">
-                                    <asp:DropDownList ID="ddlMeseros" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlMeseros_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddlMeseros" runat="server" CssClass="form-control" ></asp:DropDownList>
                                 </div>
                             </div>
 
                         </div>
+
 
                         <div class="col-lg-11 offset-lg-1">
                             <div class="form-group row">
@@ -97,6 +150,12 @@
                                                 </div>
                                             </ProgressTemplate>
                                         </asp:UpdateProgress>
+                                        <div class="row">
+                                            <div class="form-group col-lg-4 offset-lg-4">
+                                                <asp:Button ID="btnBuscarMr" OnClick="btnBuscarMr_Click" runat="server" Text="Buscar" ValidationGroup="FormBuscar2" CssClass="btn btn-secondary btn-lg" />
+                                            </div>
+                                        </div>
+
                                         <asp:GridView ID="grvListaMeseros" runat="server" CssClass="table table-bordered table-hover"
                                             AutoGenerateColumns="false" DataKeyNames="ID">
                                             <Columns>
@@ -125,21 +184,41 @@
                 <div role="tabpanel" class="tab-pane fade " id="home2" aria-labelledby="hometab1">
                     <div class="row" style="padding-top: 50px;">
                         <div class="col-lg-4 offset-lg-2">
+
+                             <div class="row">
+                                <div class="col-lg-4 text-right">
+                                    <asp:Label ID="Label8" runat="server" Text="Fecha Inicial: "></asp:Label>
+                                </div>
+                                <div class="col-lg-8 form-group">
+                                    <asp:TextBox ID="txtFechaInicialP" runat="server" CssClass="form-control" TextMode="DateTime"></asp:TextBox>
+                                    <ajaxToolkit:CalendarExtender Format="dd/MM/yyyy" ID="CalendarExtender5" TargetControlID="txtFechaInicialP" runat="server" />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ForeColor="Red" ValidationGroup="FormBuscarP" ControlToValidate="txtFechaInicialP" ErrorMessage="Debe ingresar la fecha inicial"></asp:RequiredFieldValidator>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-lg-4 text-right">
-                                    <asp:Label ID="Label2" runat="server" Text="Tipo de Producto"></asp:Label>
+                                    <asp:Label ID="Label9" runat="server" Text="Fecha Final: "></asp:Label>
                                 </div>
                                 <div class=" col-lg-8 form-group">
-                                    <asp:DropDownList ID="ddlProducto" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlProducto_SelectedIndexChanged" AutoPostBack="true">
-                                        <asp:ListItem Value="0">Refresco</asp:ListItem>
-                                        <asp:ListItem Value="1">Plato Fuerte</asp:ListItem>
-                                        <asp:ListItem Value="2">Postre</asp:ListItem>
+                                    <asp:TextBox ID="txtFechaFinalP" runat="server" CssClass="form-control" TextMode="DateTime"></asp:TextBox>
+                                    <ajaxToolkit:CalendarExtender Format="dd/MM/yyyy" TargetControlID="txtFechaFinalP" ID="CalendarExtender6" runat="server" />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ForeColor="Red" ValidationGroup="FormBuscar" ControlToValidate="txtFechaFinalP" ErrorMessage="Debe ingresar la fecha final"></asp:RequiredFieldValidator>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-4 text-right">
+                                    <asp:Label ID="Label2" runat="server" Text="Producto"></asp:Label>
+                                </div>
+                                <div class=" col-lg-8 form-group">
+                                    <asp:DropDownList ID="ddlProducto" runat="server" CssClass="form-control" >
                                     </asp:DropDownList>
                                 </div>
                             </div>
                         </div>
 
-                        
+
                         <div class="col-lg-11 offset-lg-1">
                             <div class="form-group row">
                                 <asp:UpdatePanel ID="UpdatePanel3" runat="server">
@@ -153,6 +232,11 @@
                                                 </div>
                                             </ProgressTemplate>
                                         </asp:UpdateProgress>
+                                        <div class="row">
+                                            <div class="form-group col-lg-4 offset-lg-4">
+                                                <asp:Button ID="btnBuscarP" OnClick="btnBuscarP_Click" runat="server" Text="Buscar" ValidationGroup="FormBuscarP" CssClass="btn btn-secondary btn-lg" />
+                                            </div>
+                                        </div>
                                         <asp:GridView ID="grvListaProduct" runat="server" CssClass="table table-bordered table-hover"
                                             AutoGenerateColumns="false" DataKeyNames="IDFACTURA">
 

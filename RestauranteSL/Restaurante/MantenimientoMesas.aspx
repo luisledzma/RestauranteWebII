@@ -63,7 +63,7 @@
                                     <asp:Label ID="Label7" runat="server" Text="Condición"></asp:Label>
                                 </div>
                                 <div class=" col-lg-8 form-group">
-                                    <asp:TextBox ID="txtCond" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="txtCond" runat="server" ReadOnly="true" Text="Desocupada" CssClass="form-control"></asp:TextBox>
                                 </div>
 
                             </div>

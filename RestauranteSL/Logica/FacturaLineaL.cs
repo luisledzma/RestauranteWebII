@@ -56,5 +56,38 @@ namespace Logica
 
         }
 
+
+
+        public static List<FacturaLineaE> SeleccionarFLPorProductoYFecha(string fechaInicial, string fechaFinal,string producto)
+        {
+            try
+            {
+                List<FacturaLineaE> lista = new List<FacturaLineaE>();
+                DataSet ds = FacturaLineaD.SeleccionarFLporProdYFecha(fechaInicial,fechaFinal,producto);
+
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    FacturaLineaE fact = new FacturaLineaE();
+                    fact.IDFACTURA = fila["IDFACTURA"].ToString();
+                    fact.IDPRODUCTO = Convert.ToInt16(fila["IDPRODUCTO"]);
+                    fact.NOMBREPRODUCTO = fila["NOMBREPRODUCTO"].ToString();
+                    fact.CANTIDAD = Convert.ToInt16(fila["CANTIDAD"]);
+                    fact.NOTAS = fila["NOTAS"].ToString();
+                    fact.IMPUESTOVENTAS = Convert.ToInt16(fila["IMPUESTOVENTAS"]);
+                    fact.SERVICIO = Convert.ToDecimal(fila["SERVICIO"]);
+                    fact.SUBTOTAL = Convert.ToInt16(fila["SUBTOTAL"]);
+
+                    lista.Add(fact);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+
+
+        }
+
     }
 }

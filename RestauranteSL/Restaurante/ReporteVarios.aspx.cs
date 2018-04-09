@@ -19,9 +19,7 @@ namespace Restaurante
                 {
                     llenarComboMesas();
                     llenarComboMeseros();
-                    refrescarListarMesas();
-                    refrescarListarMeseros();
-                    refrescarListarProducto();
+                    llenarComboProductos();
                 }
                 
             }
@@ -32,38 +30,18 @@ namespace Restaurante
             }
         }
 
-        protected void ddlMesas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                refrescarListarMesas();
-            }
-            catch (Exception ex)
-            {
-
-                throw;
-            }
-        }
 
         private void refrescarListarMesas()
         {
             try
             {
-                List<FacturaE> lista = new List<FacturaE>();
-                List<FacturaE> listaFormat = new List<FacturaE>();
-                lista = FacturaL.ObtenerFacturas();
-
+                string fechaIm = txtFechaInicialM.Text;
+                string fechaFm = txtFechaFinalM.Text;
                 string valor = ddlMesas.SelectedValue;
-
-
-                foreach (FacturaE elemento in lista)
-                {
-                    if (elemento.IDMESA == valor)
-                    {
-                        listaFormat.Add(elemento);
-                    }
-                }
-                grvListaMesas.DataSource = listaFormat;
+                string parametro = "MESA";
+                List<FacturaE> lista = FacturaL.ObtenerFacturaPorFechasYVarios(fechaIm, fechaFm, valor, parametro);
+               
+                grvListaMesas.DataSource = lista;
                 grvListaMesas.DataBind();
 
             }
@@ -79,21 +57,13 @@ namespace Restaurante
         {
             try
             {
-                List<FacturaE> lista = new List<FacturaE>();
-                List<FacturaE> listaFormat = new List<FacturaE>();
-                lista = FacturaL.ObtenerFacturas();
-
+                string fechaImr = txtFechaInicialMr.Text;
+                string fechaFmr = txtFechaFinalMr.Text;
                 string valor = ddlMeseros.SelectedValue;
-
-
-                foreach (FacturaE elemento in lista)
-                {
-                    if (elemento.IDMESERO == valor)
-                    {
-                        listaFormat.Add(elemento);
-                    }
-                }
-                grvListaMeseros.DataSource = listaFormat;
+                string parametro = "MESERO";
+                List<FacturaE> lista = FacturaL.ObtenerFacturaPorFechasYVarios(fechaImr, fechaFmr, valor, parametro);
+                
+                grvListaMeseros.DataSource = lista;
                 grvListaMeseros.DataBind();
 
             }
@@ -123,6 +93,24 @@ namespace Restaurante
             }
         }
 
+        private void llenarComboProductos()
+        {
+            try
+            {
+                List<ProductoE> lista = ProductoL.ObtenerTodos();
+
+                ddlProducto.DataSource = lista;
+                ddlProducto.DataTextField = "NOMBRE";
+                ddlProducto.DataValueField = "ID";
+                ddlProducto.DataBind();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         private void llenarComboMeseros()
         {
             try
@@ -141,11 +129,21 @@ namespace Restaurante
             }
         }
 
-        protected void ddlMeseros_SelectedIndexChanged(object sender, EventArgs e)
+
+      
+
+        private void refrescarListarProducto()
         {
             try
             {
-                refrescarListarMeseros();
+
+                string fechaIP = txtFechaInicialP.Text;
+                string fechaFP = txtFechaFinalP.Text;
+                string producto = ddlProducto.SelectedValue;
+                List<FacturaLineaE> lista = FacturaLineaL.SeleccionarFLPorProductoYFecha(fechaIP,fechaFP,producto);
+                
+                grvListaProduct.DataSource = lista;
+                grvListaProduct.DataBind();
             }
             catch (Exception ex)
             {
@@ -154,58 +152,39 @@ namespace Restaurante
             }
         }
 
-        protected void ddlProducto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            refrescarListarProducto();
-        }
-
-        private void refrescarListarProducto()
+        protected void btnBuscarM_Click(object sender, EventArgs e)
         {
             try
             {
-                int valor = Convert.ToInt16(ddlProducto.SelectedValue);
-
-                string categoria = "";
-
-                if (valor == 0)
-                {
-                    categoria = "Refresco";
-                }
-                else
-                {
-                    if (valor == 1)
-                    {
-                        categoria = "PlatoFuerte";
-                    }
-                    else
-                    {
-                        categoria = "Postre";
-                    }
-                }
-
-                List<FacturaLineaE> facturas = FacturaLineaL.ObtenerTodos();
-                List<FacturaLineaE> lista = new List<FacturaLineaE>();
-                List<ProductoE> productos = ProductoL.ObtenerTodos();
-
-                foreach (FacturaLineaE fact in facturas)
-                {
-                    foreach (ProductoE item in productos)
-                    {
-                        if (fact.IDPRODUCTO == item.ID)
-                        {
-                            if (item.CATEGORIA == categoria)
-                            {
-                                lista.Add(fact);
-                            }
-                        }
-                    }
-                }
-
-
-                grvListaProduct.DataSource = lista;
-                grvListaProduct.DataBind();
+                refrescarListarMesas();
             }
-            catch (Exception ex)
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        protected void btnBuscarMr_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                refrescarListarMeseros();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        protected void btnBuscarP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                refrescarListarProducto();
+            }
+            catch (Exception)
             {
 
                 throw;

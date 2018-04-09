@@ -11,7 +11,7 @@ namespace Restaurante
 {
     public partial class GestionComandas : System.Web.UI.Page
     {
-        private static List<DetalleComandaE> lstDet = new List<DetalleComandaE>();
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,13 +21,14 @@ namespace Restaurante
                 {
                     llenarComboMesas();
                     llenarComboProducto();
-                    
+                    cargarGrid();
+                    Session["lstDet"] = new List<DetalleComandaE>();
                 }
                 infoMesas();
                 buscarMesero();
                 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;
@@ -120,7 +121,7 @@ namespace Restaurante
         {
             try
             {
-                    gvOrden.DataSource = lstDet;
+                    gvOrden.DataSource = (Session["lstDet"] as List<DetalleComandaE>);
                     gvOrden.DataBind();
             }
             catch (Exception)
@@ -186,18 +187,42 @@ namespace Restaurante
             {
                 
                 string idMesa = ddlMesas.SelectedValue;
+                bool bandera = false;
+                string nombreProducto = ddlProducto.SelectedItem.Text;
+                int producto = Convert.ToInt32(ddlProducto.SelectedValue);
+                int cantidad = Convert.ToInt32(txtCantidad.Text);
+                DetalleComandaE det = new DetalleComandaE();
 
-                    string nombreProducto = ddlProducto.SelectedItem.Text;
-                    int producto = Convert.ToInt32(ddlProducto.SelectedValue);
-                    int cantidad = Convert.ToInt32(txtCantidad.Text);
-                    DetalleComandaE det = new DetalleComandaE();
+                det.IDPRODUCTO = producto;
+                det.NOMBREPRODUCTO = nombreProducto;
+                det.CANTIDAD = cantidad;
+                det.IDCOMANDA = "";
+                det.NOTAS = "";
+                det.SUBTOTAL = 0;
 
-                    det.IDPRODUCTO = producto;
-                    det.NOMBREPRODUCTO = nombreProducto;
-                    det.CANTIDAD = cantidad;
+                if((Session["lstDet"] as List<DetalleComandaE>).Count > 0)
+                {
+                    foreach (DetalleComandaE dc in (Session["lstDet"] as List<DetalleComandaE>))
+                    {
+                        if (det.IDPRODUCTO == dc.IDPRODUCTO)
+                        {
+                            dc.CANTIDAD += Convert.ToInt32(txtCantidad.Text);
+                            bandera = true;
+                        }
+                    }
 
-                    lstDet.Add(det);
-                    cargarGrid();
+                    if (!bandera)
+                    {
+                        (Session["lstDet"] as List<DetalleComandaE>).Add(det);
+                    }
+                }
+                else
+                {
+                    (Session["lstDet"] as List<DetalleComandaE>).Add(det);
+                }
+                
+                
+                cargarGrid();
                 
 
             }
@@ -212,6 +237,7 @@ namespace Restaurante
         {
             try
             {
+                List<DetalleComandaE> lstDet = (Session["lstDet"] as List<DetalleComandaE>);
                 if (txtNombreCliente.Text == "")
                 {
                     idErrores.Attributes.Add("style", "display:block;");
@@ -276,7 +302,7 @@ namespace Restaurante
 
                 MesaL.ModificarCondicion(com.IDMESA, "Comanda Registrada");
 
-                lstDet.Clear();
+                Session.Remove("lstDet");
                 Response.Redirect("Principal.aspx");
                 
             }
@@ -319,12 +345,24 @@ namespace Restaurante
         {
             try
             {
-                lstDet.Remove(new DetalleComandaE() { IDPRODUCTO = 1 });
+              
+                DetalleComandaE det = new DetalleComandaE();
+
+                int idprod = Convert.ToInt32(gvOrden.DataKeys[e.RowIndex].Values[0].ToString());
+                foreach (DetalleComandaE dc in (Session["lstDet"] as List<DetalleComandaE>))
+                {
+                    if (dc.IDPRODUCTO == idprod)
+                    {
+                        det = dc;
+                    }
+                }
+                
+                (Session["lstDet"] as List<DetalleComandaE>).Remove(det);
 
                 gvOrden.EditIndex = -1;
                 cargarGrid();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;

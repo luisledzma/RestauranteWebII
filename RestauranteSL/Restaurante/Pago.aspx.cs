@@ -127,6 +127,23 @@ namespace Restaurante
                     };
                     new ComandaL().ActualizarEstadoComanda(c);
 
+                    UsuarioE mesero = UsuarioL.SeleccionarPorId(miFactura.IDMESERO);
+                    lblFactura.Text = "Factura: " + miFactura.ID + "   ";
+                    lblFecha.Text = "Fecha: " + miFactura.FECHA;
+                    lblMesero.Text = "Mesero: " + mesero.NOMBRE + " " + mesero.APELLIDOS + " --- ";
+                    lblComanda.Text = "Comanda: " + miFactura.IDCOMANDA;
+                    lblMesa.Text = "Mesa: " + miFactura.IDMESA + " --- ";
+                    lblCliente.Text = "Cliente: " + miFactura.CLIENTE;
+                    foreach (FacturaLineaE fL in lstFacLinea)
+                    {
+                        lblProductos.Text += "Producto: " + fL.NOMBREPRODUCTO + " --- Cantidad: " + fL.CANTIDAD + " --- Precio:" + fL.SUBTOTAL + "<br/>";
+                    }
+                    lblSubTotal.Text = "Subtotal: " + txtSubtotal.Text;
+                    lblIV.Text = "Impuesto de Ventas: " + txtIV.Text;
+                    lblServicios.Text = "Servicio: " + txtServicio.Text;
+                    lblTotal.Text = "Total: " + txtTotal.Text;
+                    lblVuelto.Text = "Vuelto: " + txtVuelto.Text;
+
                     Session.Remove("miComanda");
                     ScriptManager.RegisterStartupScript(Page, Page.GetType(), "PagoExitoso", "$('#modalPagoExitoso').modal();", true);
 
@@ -229,6 +246,24 @@ namespace Restaurante
                         ESTADO = "Finalizada"
                     };
                     new ComandaL().ActualizarEstadoComanda(c);
+
+                    UsuarioE mesero = UsuarioL.SeleccionarPorId(miFactura.IDMESERO);
+                    lblFactura.Text = "Factura: " + miFactura.ID+"   ";
+                    lblFecha.Text = "Fecha: " + miFactura.FECHA;
+                    lblMesero.Text = "Mesero: " + mesero.NOMBRE + " " + mesero.APELLIDOS+" --- ";
+                    lblComanda.Text = "Comanda: " + miFactura.IDCOMANDA;
+                    lblMesa.Text = "Mesa: " + miFactura.IDMESA+" --- ";
+                    lblCliente.Text = "Cliente: " + miFactura.CLIENTE;
+                    foreach (FacturaLineaE fL in lstFacLinea)
+                    {
+                        lblProductos.Text += "Producto: " + fL.NOMBREPRODUCTO + " --- Cantidad: " + fL.CANTIDAD + " --- Precio:" + fL.SUBTOTAL + "<br/>";
+                    }
+                    lblSubTotal.Text = "Subtotal: " + txtSubtotal.Text;
+                    lblIV.Text = "Impuesto de Ventas: " + txtIV.Text;
+                    lblServicios.Text = "Servicio: " + txtServicio.Text;
+                    lblTotal.Text = "Total: " + txtTotal.Text;
+                    lblVuelto.Visible = true;
+                    lblVuelto.Text = "Vuelto: " +(pagaCon - total).ToString();
 
                     Session.Remove("miComanda");
                     ScriptManager.RegisterStartupScript(Page, Page.GetType(), "PagoExitoso", "$('#modalPagoExitoso').modal();", true);

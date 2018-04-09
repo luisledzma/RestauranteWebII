@@ -56,6 +56,48 @@ namespace Datos.Datos
 
         }
 
+        public static DataSet SeleccionarFacturaPorFechasYMedioPago(string fechaInicial, string fechaFinal,string medioPago)
+        {
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase("Default");
+                SqlCommand comando = new SqlCommand("SP_FAC_SELECCIONAR_POR_FECHAS_YMEDIO_PAGO");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@FECHAINICIAL", fechaInicial);
+                comando.Parameters.AddWithValue("@FECHAFINAL", fechaFinal);
+                comando.Parameters.AddWithValue("@MEDIOPAGO", medioPago);
+                DataSet ds = db.ExecuteReader(comando, "TBL_FACTURA");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+
+        }
+
+
+        public static DataSet SeleccionarFacturaPorFechasYVarios(string fechaInicial, string fechaFinal, string valor,string parametro)
+        {
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase("Default");
+                SqlCommand comando = new SqlCommand("SP_FAC_SELECCIONAR_POR_FECHAS_Y_VARIOS");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@FECHAINICIAL", fechaInicial);
+                comando.Parameters.AddWithValue("@FECHAFINAL", fechaFinal);
+                comando.Parameters.AddWithValue("@VALOR", valor);
+                comando.Parameters.AddWithValue("@PARAMETRO", parametro);
+                DataSet ds = db.ExecuteReader(comando, "TBL_FACTURA");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+
+        }
+
         public static DataSet SeleccionarFacturaPorFecha(string fechaInicial)
         {
             try

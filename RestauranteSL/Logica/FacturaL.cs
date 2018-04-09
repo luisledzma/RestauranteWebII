@@ -114,5 +114,71 @@ namespace Logica
             }
 
         }
+
+
+
+        public static List<FacturaE> ObtenerFacturaPorFechasYMedioPago(string fechaInicial, string fechaFinal,string medioPago)
+        {
+            try
+            {
+                List<FacturaE> lista = new List<FacturaE>();
+                DataSet ds = FacturaD.SeleccionarFacturaPorFechasYMedioPago(fechaInicial, fechaFinal,medioPago);
+
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    FacturaE fact = new FacturaE();
+                    fact.ID = fila["ID"].ToString();
+                    fact.IDMESERO = fila["IDMESERO"].ToString();
+                    fact.IDMESA = fila["IDMESA"].ToString();
+                    fact.IDCOMANDA = fila["IDCOMANDA"].ToString();
+                    fact.FECHA = fila["FECHA"].ToString();
+                    fact.CLIENTE = fila["CLIENTE"].ToString();
+                    fact.TIPOPAGO = fila["TIPOPAGO"].ToString();
+                    fact.TOTAL = Convert.ToDecimal(fila["TOTAL"]);
+
+                    lista.Add(fact);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+
+        }
+
+
+
+        public static List<FacturaE> ObtenerFacturaPorFechasYVarios(string fechaInicial, string fechaFinal, string valor,string parametro)
+        {
+            try
+            {
+                List<FacturaE> lista = new List<FacturaE>();
+                DataSet ds = FacturaD.SeleccionarFacturaPorFechasYVarios(fechaInicial, fechaFinal, valor,parametro);
+
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    FacturaE fact = new FacturaE();
+                    fact.ID = fila["ID"].ToString();
+                    fact.IDMESERO = fila["IDMESERO"].ToString();
+                    fact.IDMESA = fila["IDMESA"].ToString();
+                    fact.IDCOMANDA = fila["IDCOMANDA"].ToString();
+                    fact.FECHA = fila["FECHA"].ToString();
+                    fact.CLIENTE = fila["CLIENTE"].ToString();
+                    fact.TIPOPAGO = fila["TIPOPAGO"].ToString();
+                    fact.TOTAL = Convert.ToDecimal(fila["TOTAL"]);
+
+                    lista.Add(fact);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+
+        }
+
+
     }
 }

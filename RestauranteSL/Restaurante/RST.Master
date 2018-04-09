@@ -26,7 +26,7 @@
     <form id="form1" runat="server" >
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="Principal.aspx">Restaurante</a>
+            <a class="navbar-brand" href="Principal.aspx"><img width="50" src="Assets/img/logoRestaurante.png"/></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -64,8 +64,6 @@
                             <i style="margin-right: 5px;" class="fas fa-user"></i>
                             <asp:Label ID="lblmiPerfil" runat="server" Text=""></asp:Label></a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="#">Mi cuenta</a>
-                            <div class="dropdown-divider"></div>
                             <asp:LinkButton CssClass="dropdown-item" ID="btnCerrarSesion" runat="server" OnClick="btnCerrarSesion_Click">Cerrar Sesión</asp:LinkButton>
                         </div>
                     </li>

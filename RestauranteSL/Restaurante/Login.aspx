@@ -345,7 +345,11 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
+                            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                <ContentTemplate>
+                                    <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -168,7 +168,7 @@
 
                                                         <asp:GridView ID="gvOrden" runat="server" CssClass="table table-bordered table-hover"
                                                             AutoGenerateColumns="false"
-                                                            DataKeyNames="IDPRODUCTO"
+                                                            DataKeyNames="IDPRODUCTO,NOMBREPRODUCTO,CANTIDAD"
                                                             AutoGenerateEditButton="false"
                                                             OnRowEditing="gvOrden_RowEditing"
                                                             OnRowCancelingEdit="gvOrden_RowCancelingEdit"
@@ -191,7 +191,6 @@
                                                                 </asp:TemplateField>
 
 
-                                                                <asp:CommandField ShowEditButton="true" EditText="Editar" ControlStyle-CssClass="btn btn-secondary" />
                                                                 <asp:CommandField ShowDeleteButton="true" DeleteText="Quitar" ControlStyle-CssClass="btn btn-secondary" />
                                                             </Columns>
 

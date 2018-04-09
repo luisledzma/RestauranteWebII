@@ -58,25 +58,10 @@ namespace Restaurante
             try
             {
                 string fechaI = txtFechaInicial.Text;
-                DateTime fechaInicial = Convert.ToDateTime(fechaI);
-
-                string fechaF = txtFechaInicial.Text;
-                DateTime fechaFinal = Convert.ToDateTime(fechaF);
-
-                List<FacturaE> lista = new List<FacturaE>();
-                List<FacturaE> listaFormat = new List<FacturaE>();
-                lista = FacturaL.ObtenerFacturas();
-
-                foreach (FacturaE elemento in lista)
-                {
-                    DateTime fecha = Convert.ToDateTime(elemento.FECHA);
-                    if (fecha >= fechaInicial && fecha<=fechaFinal)
-                    {
-                        listaFormat.Add(elemento);
-                    }
-                }
-
-                grvListado.DataSource = listaFormat;
+                string fechaF = txtFechaFinal.Text;
+                
+                
+                grvListado.DataSource = FacturaL.ObtenerFacturaPorFechas(fechaI,fechaF);
                 grvListado.DataBind();
             }
             catch (Exception ex)
