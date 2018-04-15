@@ -402,7 +402,7 @@
                 <span class="text-warning">Copyrigth&copy;</span><asp:Label ID="Label1" runat="server" Text="All rights Reserved "></asp:Label>
             </div>
             <div class="row d-block mx-auto">
-                <asp:Label ID="Label2" runat="server" Text="Created by: Anthony, Joszef and Luis "></asp:Label>
+                <asp:Label ID="Label2" runat="server" Text="Created by: Anthony, Jozsef and Luis "></asp:Label>
             </div>
 
         </div>
