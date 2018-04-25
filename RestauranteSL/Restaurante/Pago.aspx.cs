@@ -27,7 +27,9 @@ namespace Restaurante
             }
             catch (Exception ex)
             {
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalPago", "$('#myModal').modal();", true);
+                return;
             }
         }
 
@@ -53,10 +55,11 @@ namespace Restaurante
                 txtTotal.Text = (subtotal + impuestos + servicio).ToString();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalPago", "$('#myModal').modal();", true);
+                return;
             }
         }
 
@@ -157,8 +160,9 @@ namespace Restaurante
             }
             catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalPago", "$('#myModal').modal();", true);
+                return;
             }
         }
 
@@ -169,10 +173,11 @@ namespace Restaurante
                 Session.Remove("miComanda");
                 Response.Redirect("GestionMesas.aspx");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalPago", "$('#myModal').modal();", true);
+                return;
             }
         }
 
@@ -276,10 +281,11 @@ namespace Restaurante
                     return;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalPago", "$('#myModal').modal();", true);
+                return;
             }
         }
 
@@ -290,10 +296,11 @@ namespace Restaurante
                 Session.Remove("miComanda");
                 Response.Redirect("GestionMesas.aspx");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalPago", "$('#myModal').modal();", true);
+                return;
             }
         }
     }

@@ -44,17 +44,27 @@
                                 </div>
 
                             </div>
-                            <div class="row">
-                                <div class="form-group col-lg-4 offset-lg-4">
-                                    <asp:Button ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" Text="Buscar" ValidationGroup="FormBuscar" CssClass="btn btn-secondary btn-lg" />
-                                </div>
-                            </div>
+
                         </div>
 
                         <div class="col-lg-11 offset-lg-1">
                             <div class="form-group row">
                                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                     <ContentTemplate>
+                                        <div class="row">
+                                            <div class="form-group col-lg-4 offset-lg-4">
+                                                <asp:Button ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" Text="Buscar" ValidationGroup="FormBuscar" CssClass="btn btn-secondary btn-lg" />
+                                            </div>
+                                        </div>
+                                        <asp:UpdateProgress AssociatedUpdatePanelID="UpdatePanel1" ID="UpdateProgress1" runat="server" DynamicLayout="true">
+                                            <ProgressTemplate>
+                                                <div class="loading-panel">
+                                                    <div class="loading-container">
+                                                        <img class="mx-auto d-block" src="Assets/img/loading.svg" />
+                                                    </div>
+                                                </div>
+                                            </ProgressTemplate>
+                                        </asp:UpdateProgress>
                                         <asp:GridView ID="grvListado" runat="server" CssClass="table table-bordered table-hover"
                                             AutoGenerateColumns="false" DataKeyNames="ID">
                                             <Columns>
@@ -78,6 +88,30 @@
 
             </div>
 
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Restaurante</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                        <ContentTemplate>
+                            <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
 

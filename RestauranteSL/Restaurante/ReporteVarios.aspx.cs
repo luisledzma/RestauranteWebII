@@ -147,8 +147,9 @@ namespace Restaurante
             }
             catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalReportVarios", "$('#myModal').modal();", true);
+                return;
             }
         }
 
@@ -158,10 +159,11 @@ namespace Restaurante
             {
                 refrescarListarMesas();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalReportVarios", "$('#myModal').modal();", true);
+                return;
             }
         }
 
@@ -171,10 +173,11 @@ namespace Restaurante
             {
                 refrescarListarMeseros();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalReportVarios", "$('#myModal').modal();", true);
+                return;
             }
         }
 
@@ -184,10 +187,11 @@ namespace Restaurante
             {
                 refrescarListarProducto();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalReportVarios", "$('#myModal').modal();", true);
+                return;
             }
         }
     }

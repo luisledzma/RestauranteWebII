@@ -42,7 +42,7 @@
                                         <ProgressTemplate>
                                             <div class="loading-panel">
                                                 <div class="loading-container">
-                                                    <img class="mx-auto d-block" src="Assets/img/loading.svg" style="width: 150px; height: 150px; display: block; position: absolute; z-index: 2001; left: 40%; top: 45%;" />
+                                                    <img class="mx-auto d-block" src="Assets/img/loading.svg"  />
                                                 </div>
                                             </div>
                                         </ProgressTemplate>
@@ -118,7 +118,7 @@
                                         <ProgressTemplate>
                                             <div class="loading-panel">
                                                 <div class="loading-container">
-                                                    <img class="mx-auto d-block" src="Assets/img/loading.svg" style="width: 150px; height: 150px; display: block; position: absolute; z-index: 2001; left: 40%; top: 45%;" />
+                                                    <img class="mx-auto d-block" src="Assets/img/loading.svg"  />
                                                 </div>
                                             </div>
                                         </ProgressTemplate>
@@ -197,15 +197,24 @@
                     <div class="alert alert-success" role="alert">
                         <asp:UpdatePanel ID="UpdatePanel4" runat="server">
                             <ContentTemplate>
-                                <h4 class="alert-heading"><asp:Label ID="lblFactura" runat="server" Text=""></asp:Label><asp:Label ID="lblFecha" runat="server" Text=""></asp:Label></h4>
-                                <p><asp:Label ID="lblMesero" runat="server" Text=""></asp:Label><asp:Label ID="lblComanda" runat="server" Text=""></asp:Label></p>
-                                <p><asp:Label ID="lblMesa" runat="server" Text=""></asp:Label><asp:Label ID="lblCliente" runat="server" Text=""></asp:Label></p>
-                                <p><asp:Label ID="lblProductos" runat="server" Text=""></asp:Label></p>
-                                <p><asp:Label ID="lblSubTotal" runat="server" Text=""></asp:Label></p>
-                                <p><asp:Label ID="lblIV" runat="server" Text=""></asp:Label></p>
-                                <p><asp:Label ID="lblServicios" runat="server" Text=""></asp:Label></p>
-                                <p><asp:Label ID="lblTotal" runat="server" Text=""></asp:Label></p>
-                                <p><asp:Label ID="lblVuelto" runat="server" Visible="false" Text=""></asp:Label></p>
+                                <h4 class="alert-heading">
+                                    <asp:Label ID="lblFactura" runat="server" Text=""></asp:Label><asp:Label ID="lblFecha" runat="server" Text=""></asp:Label></h4>
+                                <p>
+                                    <asp:Label ID="lblMesero" runat="server" Text=""></asp:Label><asp:Label ID="lblComanda" runat="server" Text=""></asp:Label></p>
+                                <p>
+                                    <asp:Label ID="lblMesa" runat="server" Text=""></asp:Label><asp:Label ID="lblCliente" runat="server" Text=""></asp:Label></p>
+                                <p>
+                                    <asp:Label ID="lblProductos" runat="server" Text=""></asp:Label></p>
+                                <p>
+                                    <asp:Label ID="lblSubTotal" runat="server" Text=""></asp:Label></p>
+                                <p>
+                                    <asp:Label ID="lblIV" runat="server" Text=""></asp:Label></p>
+                                <p>
+                                    <asp:Label ID="lblServicios" runat="server" Text=""></asp:Label></p>
+                                <p>
+                                    <asp:Label ID="lblTotal" runat="server" Text=""></asp:Label></p>
+                                <p>
+                                    <asp:Label ID="lblVuelto" runat="server" Visible="false" Text=""></asp:Label></p>
                             </ContentTemplate>
                         </asp:UpdatePanel>
                     </div>
@@ -218,7 +227,29 @@
     </div>
 
 
-
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Restaurante</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <asp:UpdatePanel ID="UpdatePanel5" runat="server">
+                        <ContentTemplate>
+                            <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </asp:Content>

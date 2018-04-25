@@ -20,9 +20,11 @@ namespace Restaurante
                     refrescarListar();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalReportMPago", "$('#myModal').modal();", true);
+                return;
             }
         }
 
@@ -40,10 +42,11 @@ namespace Restaurante
                 grvListado.DataSource = lista;
                 grvListado.DataBind();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalReportMPago", "$('#myModal').modal();", true);
+                return;
             }
             
         }
@@ -54,10 +57,11 @@ namespace Restaurante
             {
                 refrescarListar();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalReportMPago", "$('#myModal').modal();", true);
+                return;
             }
         }
     }

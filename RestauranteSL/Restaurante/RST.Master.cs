@@ -50,7 +50,7 @@ namespace Restaurante
             catch (Exception ex)
             {
                 lblMensaje.Text = "Error: " + ex.Message;
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMaster", "$('#myModal').modal();", true);
                 return;
             }
         }
@@ -67,7 +67,7 @@ namespace Restaurante
             catch (Exception ex)
             {
                 lblMensaje.Text = "Error: " + ex.Message;
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMaster", "$('#myModal').modal();", true);
                 return;
             }
         }
@@ -82,7 +82,7 @@ namespace Restaurante
             catch (Exception ex)
             {
                 lblMensaje.Text = "Error: " + ex.Message;
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMaster", "$('#myModal').modal();", true);
                 return;
             }
         }

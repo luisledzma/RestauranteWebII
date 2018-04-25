@@ -29,7 +29,7 @@ namespace Restaurante
                 foreach (MesaE mesa in mesas)
                 {
                     valor += "<div class='card col-md-2 offset-lg-1 col-lg-2 wow fadeIn' data-wow-duration='1000ms' data-wow-delay='400ms'>" +
-                    "<img class='card-img-top' src='Assets/img/mesero.png' />" +
+                    "<img class='card-img-top' src='Assets/img/mesa2.png' />" +
                     "<div class='card-body'>" +
                         "<h5 class='card-title'>" + mesa.ID + "</h5>" +
                         "<p class='card-text' style='font-size:13px;'>Condición:" + mesa.CONDICION + " </p>" +
@@ -121,8 +121,9 @@ namespace Restaurante
             }
             catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMesas", "$('#myModal').modal();", true);
+                return;
             }
         }
 
@@ -144,10 +145,11 @@ namespace Restaurante
                 grvProductos.DataBind();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMesas", "$('#myModal').modal();", true);
+                return;
             }
         }
 
@@ -177,8 +179,9 @@ namespace Restaurante
             }
             catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMesas", "$('#myModal').modal();", true);
+                return;
             }
         }
 
@@ -195,10 +198,11 @@ namespace Restaurante
                 }
                 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMesas", "$('#myModal').modal();", true);
+                return;
             }
         }
 

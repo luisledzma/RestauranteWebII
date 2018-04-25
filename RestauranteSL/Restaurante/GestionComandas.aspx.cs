@@ -30,8 +30,9 @@ namespace Restaurante
             }
             catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalComandas", "$('#myModal').modal();", true);
+                return;
             }
             
         }
@@ -42,10 +43,11 @@ namespace Restaurante
             {
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalComandas", "$('#myModal').modal();", true);
+                return;
             }
         }
 
@@ -70,10 +72,11 @@ namespace Restaurante
                 ddlMesas.DataValueField = "ID";
                 ddlMesas.DataBind();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalComandas", "$('#myModal').modal();", true);
+                return;
             }
 
             
@@ -85,10 +88,11 @@ namespace Restaurante
             {
                 txtMesero.Text = (Session["Login"] as UsuarioE).NOMBRE;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalComandas", "$('#myModal').modal();", true);
+                return;
             }
             
         }
@@ -111,8 +115,9 @@ namespace Restaurante
             }
             catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalComandas", "$('#myModal').modal();", true);
+                return;
             }
             
         }
@@ -124,10 +129,11 @@ namespace Restaurante
                     gvOrden.DataSource = (Session["lstDet"] as List<DetalleComandaE>);
                     gvOrden.DataBind();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalComandas", "$('#myModal').modal();", true);
+                return;
             }
         }
 
@@ -160,10 +166,11 @@ namespace Restaurante
                 ddlProducto.DataValueField = "ID";
                 ddlProducto.DataBind();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalComandas", "$('#myModal').modal();", true);
+                return;
             }
         }
 
@@ -173,10 +180,11 @@ namespace Restaurante
             {
                 llenarComboProducto();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalComandas", "$('#myModal').modal();", true);
+                return;
             }
             
         }
@@ -228,8 +236,9 @@ namespace Restaurante
             }
             catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalComandas", "$('#myModal').modal();", true);
+                return;
             }
         }
 
@@ -306,10 +315,11 @@ namespace Restaurante
                 Response.Redirect("Principal.aspx");
                 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalComandas", "$('#myModal').modal();", true);
+                return;
             }
         }
 
@@ -320,10 +330,11 @@ namespace Restaurante
                 gvOrden.EditIndex = e.NewEditIndex;
                 this.cargarGrid();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalComandas", "$('#myModal').modal();", true);
+                return;
             }
         }
 
@@ -334,10 +345,11 @@ namespace Restaurante
                 gvOrden.EditIndex = -1;
                 cargarGrid();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalComandas", "$('#myModal').modal();", true);
+                return;
             }
         }
 
@@ -364,8 +376,9 @@ namespace Restaurante
             }
             catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalComandas", "$('#myModal').modal();", true);
+                return;
             }
             
         }
@@ -376,10 +389,11 @@ namespace Restaurante
             {
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalComandas", "$('#myModal').modal();", true);
+                return;
             }
         }
 
@@ -398,10 +412,11 @@ namespace Restaurante
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalComandas", "$('#myModal').modal();", true);
+                return;
             }
         }
     }

@@ -48,10 +48,11 @@ namespace Restaurante
                 UsuarioL.Nuevo(usuario);
                 Response.Redirect("MantenimientoUsuarios.aspx");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMantUsuarios", "$('#myModal').modal();", true);
+                return;
             }
             
         }
@@ -65,10 +66,11 @@ namespace Restaurante
                 grvListado.DataSource = lista;
                 grvListado.DataBind();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMantUsuarios", "$('#myModal').modal();", true);
+                return;
             }
             
         }
@@ -82,10 +84,11 @@ namespace Restaurante
                
                 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMantUsuarios", "$('#myModal').modal();", true);
+                return;
             }
             
         }
@@ -97,10 +100,11 @@ namespace Restaurante
                 grvListado.EditIndex = -1;
                 refrescarListar();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMantUsuarios", "$('#myModal').modal();", true);
+                return;
             }
             
         }
@@ -116,10 +120,11 @@ namespace Restaurante
 
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMantUsuarios", "$('#myModal').modal();", true);
+                return;
             }
             
         }
@@ -144,10 +149,11 @@ namespace Restaurante
                 grvListado.EditIndex = -1;
                 refrescarListar();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMantUsuarios", "$('#myModal').modal();", true);
+                return;
             }
 
 

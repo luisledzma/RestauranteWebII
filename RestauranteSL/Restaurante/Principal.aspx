@@ -8,7 +8,7 @@
 
             <div class="row">
 
-                <div style="display:none;" runat="server" id="mantenim1"  class="card col-md-4 col-lg-4 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">
+                <div style="display: none;" runat="server" id="mantenim1" class="card col-md-3 col-lg-3 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">
                     <img class="card-img-top" src="Assets/img/mesero.png" />
                     <div class="card-body">
                         <h5 class="card-title">Mantenimiento de Usuarios</h5>
@@ -16,7 +16,7 @@
                         <a href="MantenimientoUsuarios.aspx" class="btn btn-primary">Presione Aquí</a>
                     </div>
                 </div>
-                <div style="display:none;" runat="server" id="mantenim2" class="card col-md-4 col-lg-4 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">
+                <div style="display: none;" runat="server" id="mantenim2" class="card col-md-3 col-lg-3 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">
                     <img class="card-img-top" src="Assets/img/mesa.png" />
                     <div class="card-body">
                         <h5 class="card-title">Mantenimiento de Mesas</h5>
@@ -24,7 +24,7 @@
                         <a href="MantenimientoMesas.aspx" class="btn btn-primary">Presione Aquí</a>
                     </div>
                 </div>
-                <div style="display:none;" runat="server" id="mantenim3" class="card col-md-4 col-lg-4 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">
+                <div style="display: none;" runat="server" id="mantenim3" class="card col-md-3 col-lg-3 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">
                     <img class="card-img-top" src="Assets/img/food.png" />
                     <div class="card-body">
                         <h5 class="card-title">Mantenimiento de Productos</h5>
@@ -33,7 +33,7 @@
                     </div>
                 </div>
 
-                <div class="card col-md-4 col-lg-4 wow fadeIn" style="display:none;" runat="server" id="vent1"  data-wow-duration="1000ms" data-wow-delay="400ms">
+                <div class="card col-md-3 col-lg-3 wow fadeIn" style="display: none;" runat="server" id="vent1" data-wow-duration="1000ms" data-wow-delay="400ms">
                     <img class="card-img-top" src="Assets/img/reporte.png" />
                     <div class="card-body">
                         <h5 class="card-title">Reporte por Fecha</h5>
@@ -41,7 +41,7 @@
                         <a href="ReporteFecha.aspx" class="btn btn-primary">Presione Aquí</a>
                     </div>
                 </div>
-                <div class="card col-md-4 col-lg-4 wow fadeIn" style="display:none;" runat="server" id="vent2"  data-wow-duration="1000ms" data-wow-delay="400ms">
+                <div class="card col-md-3 col-lg-3 wow fadeIn" style="display: none;" runat="server" id="vent2" data-wow-duration="1000ms" data-wow-delay="400ms">
                     <img class="card-img-top" src="Assets/img/reporte.png" />
                     <div class="card-body">
                         <h5 class="card-title">Reporte por Medio de Pago</h5>
@@ -49,7 +49,7 @@
                         <a href="ReporteMedioPago.aspx" class="btn btn-primary">Presione Aquí</a>
                     </div>
                 </div>
-                <div class="card col-md-4 col-lg-4 wow fadeIn" style="display:none;" runat="server" id="vent3"  data-wow-duration="1000ms" data-wow-delay="400ms">
+                <div class="card col-md-3 col-lg-3 wow fadeIn" style="display: none;" runat="server" id="vent3" data-wow-duration="1000ms" data-wow-delay="400ms">
                     <img class="card-img-top" src="Assets/img/reporte.png" />
                     <div class="card-body">
                         <h5 class="card-title">Reporte por Mesa-Mesero-Producto</h5>
@@ -58,7 +58,7 @@
                     </div>
                 </div>
 
-                <div style="display:none;" runat="server" id="comand" class="card col-md-4 col-lg-4 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">
+                <div style="display: none;" runat="server" id="comand" class="card col-md-3 col-lg-3 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">
                     <img class="card-img-top" src="Assets/img/factura.png" />
                     <div class="card-body">
                         <h5 class="card-title">Gestión de Comandas</h5>
@@ -67,7 +67,7 @@
                     </div>
                 </div>
 
-                <div style="display:none;" runat="server" id="comand2" class="card col-md-4 col-lg-4 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">
+                <div style="display: none;" runat="server" id="comand2" class="card col-md-3 col-lg-3 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">
                     <img class="card-img-top" src="Assets/img/factura.png" />
                     <div class="card-body">
                         <h5 class="card-title">Gestión de Mesas</h5>
@@ -80,6 +80,30 @@
 
         </div>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Restaurante</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                        <ContentTemplate>
+                            <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="js" runat="server">
 </asp:Content>

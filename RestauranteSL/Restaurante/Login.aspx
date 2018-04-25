@@ -35,7 +35,37 @@
         }
 
 
-        
+        .loading-panel {
+    /*background: rgba(0, 0, 0, 0.2) none repeat scroll 0 0;
+    position: relative;
+    width: 100%;*/
+    background: rgba(255, 255, 255, 0.6) none repeat scroll 0 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 99999999;
+    top: 0;
+    left: 0;
+}
+
+.loading-container {
+    /*background: rgba(255, 255, 255, 0.6) none repeat scroll 0 0;
+    color: #fff;
+    font-size: 90px;
+    height: 100%;
+    left: 0;
+    padding-top: 15%;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 999999;*/
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
 
 
         @media (max-width:576px) {

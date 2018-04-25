@@ -21,9 +21,11 @@ namespace Restaurante
                     refrescarListar();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMantMesas", "$('#myModal').modal();", true);
+                return;
             }
             
         }
@@ -42,9 +44,11 @@ namespace Restaurante
                 MesaL.Nuevo(mesa);
                 Response.Redirect("MantenimientoMesas.aspx");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMantMesas", "$('#myModal').modal();", true);
+                return;
             }
             
         }
@@ -58,9 +62,11 @@ namespace Restaurante
                 grvListado.DataSource = lista;
                 grvListado.DataBind();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMantMesas", "$('#myModal').modal();", true);
+                return;
             }
             
         }
@@ -72,10 +78,12 @@ namespace Restaurante
                 grvListado.EditIndex = e.NewEditIndex;
                 refrescarListar();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMantMesas", "$('#myModal').modal();", true);
+                return;
             }
             
         }
@@ -87,10 +95,11 @@ namespace Restaurante
                 grvListado.EditIndex = -1;
                 refrescarListar();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMantMesas", "$('#myModal').modal();", true);
+                return;
             }
             
         }
@@ -112,10 +121,11 @@ namespace Restaurante
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMantMesas", "$('#myModal').modal();", true);
+                return;
             }
             
         }
@@ -140,10 +150,11 @@ namespace Restaurante
                 grvListado.EditIndex = -1;
                 refrescarListar();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblMensaje.Text = "Error: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalMantMesas", "$('#myModal').modal();", true);
+                return;
             }
             
         }
